@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+class AppColors {
+  AppColors._();
+
+  ///APP Color
+  static const Color primaryColor = Color(0xFFFF7900); //used in app
+  static const Color secondaryColor = Color(0xFF02AEF4); //used in app
+  static const Color tertiaryColor = Color(0xFF121212); //used in app
+  static const Color backgroundColor = Color(0xFF1D1D1D); //used in app
+
+  ///text color
+  static const Color primaryTextColor = Color(0xFF000000); //used in app
+  static const Color secondaryTextColor = Color(0xFFFFFFFF); //used in app
+
+  ///icon color
+  static const Color primaryIconColor = Color(0xFFFFFFFF); //used in app
+
+  ///text Input field
+  static const Color inputFieldBackgroundColor = Color(0xff000000);//used in app
+
+  ///auth ContainerBackGround color
+  static const Color authContainerBackGroundColor = Color(0xFF202126);//used in app
+
+  /// verify box color
+  static const Color verifyBoxColor = Color(0xFFEEEEEE);//used in app
+
+
+  ///NOT SELECTED YET
+  static const Color error_message = Color(0xFFB00020);
+}
