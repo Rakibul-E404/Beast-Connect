@@ -1,6 +1,8 @@
-import 'package:beast_connect/auth/signUp_auth_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../auth/signup_screen/signUp_screen_ui.dart';
 
 class SigninAuthScreenController extends GetxController {
   final emailController = TextEditingController();
@@ -40,7 +42,7 @@ class SigninAuthScreenController extends GetxController {
 
   /// Navigates to the Sign-Up screen
   void goToSignUp() {
-    Get.to(() => SignUpAuthScreen());
+    Get.to(() => SignupScreenUi());
   }
 
   @override

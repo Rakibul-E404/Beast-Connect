@@ -22,6 +22,9 @@ class AppColors {
   ///auth ContainerBackGround color
   static const Color authContainerBackGroundColor = Color(0xFF202126);//used in app
 
+  /// photo box color
+  static const Color photoBoxColor = Color(0xFFEEEEEE);//used in app
+
   /// verify box color
   static const Color verifyBoxColor = Color(0xFFEEEEEE);//used in app
 

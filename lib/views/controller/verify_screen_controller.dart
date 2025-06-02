@@ -1,7 +1,8 @@
 import 'dart:async';
-import 'package:beast_connect/views/screens/userInterest_screen/userInterest_screen_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../screens/profileSetUp/userInterest_screen/userInterest_screen_ui.dart';
 
 class VerifyScreenController extends GetxController {
   final List<TextEditingController> otpControllers = List.generate(6, (_) => TextEditingController());
@@ -63,7 +64,7 @@ class VerifyScreenController extends GetxController {
   }
 
   void navigateToNextScreen() {
-    Get.off(() => UserInterestsScreen());
+    Get.off(() => UserInterestsScreenUi());
   }
 
   @override
