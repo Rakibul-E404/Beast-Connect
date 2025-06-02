@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter splash with GetX & DevicePreview',
       // home: SplashScreen(),
-      home: VerifyScreenUi(),
+      home: OnboardScreen(),
     );
   }
 }
