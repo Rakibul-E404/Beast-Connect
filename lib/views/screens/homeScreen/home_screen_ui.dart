@@ -1,9 +1,12 @@
-
+import 'package:beast_connect/views/screens/challange_screen/challange_screen_ui.dart';
+import 'package:beast_connect/views/screens/communitiesScreen/communities_screen_ui.dart';
+import 'package:beast_connect/views/screens/connectionScreen/connection_screen_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/asset_path.dart';
 import '../../../widget/font/customAppFontStyle.dart';
+import '../../../widget/navigationBars/customBottomNavigationBar.dart';
 import '../../controller/home_screen_controller.dart';
 import 'home_screen_widget/joinCallWidget.dart';
 import 'home_screen_widget/nextEventWidget.dart';
@@ -11,9 +14,17 @@ import 'home_screen_widget/popularConnectionsWidget.dart';
 import 'home_screen_widget/rankedUsersWidget.dart';
 import 'home_screen_widget/sectionHeader.dart';
 
-class HomeScreenUi extends StatelessWidget {
-  HomeScreenUi({super.key});
+class HomeScreenUi extends StatefulWidget {
+  const HomeScreenUi({super.key});
+
+  @override
+  _HomeScreenUiState createState() => _HomeScreenUiState();
+}
+
+class _HomeScreenUiState extends State<HomeScreenUi> {
   final HomeScreenController controller = Get.put(HomeScreenController());
+  final PageController _pageController = PageController();
+  int _currentIndex = 0;  // To track the selected index
 
   List<dynamic> rankedUsers = [
     {'name': 'User 1', 'score': 100, 'image': 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80'},
@@ -24,6 +35,7 @@ class HomeScreenUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -31,7 +43,7 @@ class HomeScreenUi extends StatelessWidget {
         toolbarHeight: 220,
         flexibleSpace: Stack(
           children: [
-            // Background Image - originally Positioned.fill
+            // Background Image
             Transform.translate(
               offset: const Offset(0, -25),
               child: SizedBox.expand(
@@ -103,7 +115,7 @@ class HomeScreenUi extends StatelessWidget {
               ),
             ),
 
-            // Bottom Chat Input Row - originally Positioned bottom: 20
+            // Bottom Chat Input Row
             Align(
               alignment: Alignment.bottomCenter,
               child: Transform.translate(
@@ -183,7 +195,7 @@ class HomeScreenUi extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Filter Buttons with controller logic only
+            // Filter Buttons with controller logic
             Obx(() {
               return SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -243,11 +255,10 @@ class HomeScreenUi extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-
             buildSectionHeader('Popular Connections'),
             PopularConnectionsWidget(
               popularConnections: controller.popularConnections,
-              screenWidth: MediaQuery.of(context).size.width,
+              screenWidth: screenWidth,
             ),
             const SizedBox(height: 20),
 
@@ -257,9 +268,8 @@ class HomeScreenUi extends StatelessWidget {
                 {'image': 'https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=400&q=80'},
                 {'image': 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80'},
                 {'image': 'https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=400&q=80'},
-                // Add more events here...
               ],
-              screenWidth: MediaQuery.of(context).size.width,
+              screenWidth: screenWidth,
             ),
             const SizedBox(height: 20),
 
@@ -280,13 +290,9 @@ class HomeScreenUi extends StatelessWidget {
                   'date': '2025-06-04',
                   'duration': '1h 30m',
                 },
-                // Add more calls here...
               ],
             ),
             const SizedBox(height: 20),
-
-
-
 
             RankedUsersWidget(
               rankedUsers: rankedUsers,
@@ -294,24 +300,42 @@ class HomeScreenUi extends StatelessWidget {
             ),
 
             const SizedBox(height: 40),
-
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.orange,
-        unselectedItemColor: Colors.white54,
-        currentIndex: 0,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: "Connection"),
-          BottomNavigationBarItem(icon: Icon(Icons.flag), label: "Challenge"),
-          BottomNavigationBarItem(icon: Icon(Icons.forum), label: "Communicate"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+
+      bottomNavigationBar: CustomBottomNavBar(
+        items: [
+          BottomNavItem(label: 'Home', iconPath: 'assets/icon/home_icon.svg'),
+          BottomNavItem(label: 'Connection', iconPath: 'assets/icon/loveNew_icon.svg'),
+          BottomNavItem(label: 'Challenge', iconPath: 'assets/icon/frame_icon.svg'),
+          BottomNavItem(label: 'Communicate', iconPath: 'assets/icon/group_icon.svg'),
+          BottomNavItem(label: 'Profile', iconPath: 'assets/icon/profile_icon.svg'),
         ],
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          if (index == 1)
+            {Get.to(()=> ConnectionScreenUi(screenWidth: MediaQuery.of(context).size.width,));}
+          if (index == 2)
+            {Get.to(()=> ChallengeScreenUi());}
+          if (index == 3)
+            {Get.to(()=> CommunitiesEventScreenUi());}
+          setState(() {
+            _currentIndex = index;  // Update the current index
+          });
+          _pageController.jumpToPage(index);  // Navigate to the selected screen
+        },
+        backgroundColor: Colors.black,
+        iconColor: Colors.white54,
+        selectedIconColor: Colors.orange,
+        iconLabelColor: Colors.white,
+        selectedIconLabelColor: Colors.orange,
       ),
     );
   }
 }
+
+
+
+
+

@@ -149,15 +149,20 @@ class CustomOutlinedButton extends StatelessWidget {
     if (prefix != null || suffix != null) {
       final rowChildren = <Widget>[];
 
+      // Add the prefix (leftmost icon)
       if (prefix != null) rowChildren.add(prefix);
-      if (prefix != null || suffix != null) rowChildren.add(SizedBox(width: gap ?? 8));
-      rowChildren.add(finalChild);
-      if (suffix != null) rowChildren.add(SizedBox(width: gap ?? 8));
-      if (suffix != null) rowChildren.add(suffix);
+
+      // Add the button text (centered)
+      rowChildren.add(finalChild);  // Ensure text is centered
+
+      // Spacer to push the icon to the rightmost side
+      if (suffix != null) {
+        rowChildren.add(Spacer());  // This pushes the icon to the far right
+        rowChildren.add(suffix);
+      }
 
       finalChild = Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: contentAlignment ?? MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,  // Keep the text centered
         children: rowChildren,
       );
     }
@@ -184,3 +189,5 @@ class CustomOutlinedButton extends StatelessWidget {
     );
   }
 }
+
+

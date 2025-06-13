@@ -59,84 +59,94 @@ class CustomBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: navBarHeight,
-      width: navBarWidth,
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: borderRadius ?? const BorderRadius.only(
-          topLeft: Radius.circular(15),
-          topRight: Radius.circular(15),
+    return SafeArea(
+      child: Container(
+        height: navBarHeight,
+        width: navBarWidth,
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          /// setting the border curve
+          borderRadius: borderRadius ?? const BorderRadius.only(
+            topLeft: Radius.circular(0),
+            topRight: Radius.circular(0),
+          ),
+          boxShadow: boxShadow ?? [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              blurRadius: 6,
+              spreadRadius: 2,
+            )
+          ],
         ),
-        boxShadow: boxShadow ?? [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            blurRadius: 6,
-            spreadRadius: 2,
-          )
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: List.generate(items.length, (index) {
-          final item = items[index];
-          final isSelected = currentIndex == index;
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List.generate(items.length, (index) {
+            final item = items[index];
+            final isSelected = currentIndex == index;
 
-          return GestureDetector(
-            onTap: () => onTap(index),
-            child: Container(
-              padding: EdgeInsets.all(iconPadding),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Icon with optional selection effect
-                  if (selectedIconEffect)
-                    AnimatedContainer(
-                      duration: iconEffectDuration,
-                      curve: iconEffectCurve,
-                      transform: Matrix4.identity()
-                        ..translate(
-                          0.0,
-                          isSelected ? -iconEffectElevation : 0.0,
-                          0.0,
-                        ),
-                      child: _buildIcon(item, isSelected),
-                    )
-                  else
-                    _buildIcon(item, isSelected),
+            return GestureDetector(
+              onTap: () => onTap(index),
+              child: Container(
+                padding: EdgeInsets.all(iconPadding),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Icon with optional selection effect
+                    if (selectedIconEffect)
+                      AnimatedContainer(
+                        duration: iconEffectDuration,
+                        curve: iconEffectCurve,
+                        transform: Matrix4.identity()
+                          ..translate(
+                            0.0,
+                            isSelected ? -iconEffectElevation : 0.0,
+                            0.0,
+                          ),
+                        child: _buildIcon(item, isSelected),
+                      )
+                    else
+                      _buildIcon(item, isSelected),
 
-                  // Label
-                  if ((isSelected && showSelectedLabels) || (!isSelected && showUnselectedLabels))
-                    Padding(
-                      padding: const EdgeInsets.only(top: 4.0),
-                      child: Text(
-                        item.label,
-                        style: isSelected
-                            ? selectedLabelStyle ?? TextStyle(
-                          color: selectedIconLabelColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        )
-                            : unselectedLabelStyle ?? TextStyle(
-                          color: iconLabelColor,
-                          fontSize: 12,
+                    // Label
+                    if ((isSelected && showSelectedLabels) || (!isSelected && showUnselectedLabels))
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4.0),
+                        child: Text(
+                          item.label,
+                          style: isSelected
+                              ? selectedLabelStyle ?? TextStyle(
+                            color: selectedIconLabelColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          )
+                              : unselectedLabelStyle ?? TextStyle(
+                            color: iconLabelColor,
+                            fontSize: 12,
+                          ),
                         ),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ),
     );
   }
 
   Widget _buildIcon(BottomNavItem item, bool isSelected) {
-    final iconWidget = isSvgIcon
+    final iconWidget = item.iconPath.isNotEmpty
+        ? item.iconPath.endsWith('.svg')  // Check if iconPath is an SVG file
         ? SvgPicture.asset(
       item.iconPath,
+      width: isSelected ? selectedIconSize : iconSize,
+      height: isSelected ? selectedIconSize : iconSize,
+      color: isSelected ? selectedIconColor : iconColor,
+    )
+        : Image.asset(
+      item.iconPath,  // For image icons
       width: isSelected ? selectedIconSize : iconSize,
       height: isSelected ? selectedIconSize : iconSize,
       color: isSelected ? selectedIconColor : iconColor,
@@ -153,7 +163,7 @@ class CustomBottomNavBar extends StatelessWidget {
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: selectedIconColor.withValues(alpha: 0.3),
+            color: selectedIconColor.withOpacity(0.3),
             blurRadius: iconEffectElevation * 2,
             spreadRadius: 1,
           ),
@@ -167,20 +177,12 @@ class CustomBottomNavBar extends StatelessWidget {
 
 class BottomNavItem {
   final String label;
-  final String iconPath;
+  final String iconPath;  // Path to SVG or image icon
   final IconData iconData;
 
   BottomNavItem({
     required this.label,
-    this.iconPath = '',
-    this.iconData = Icons.home,
+    this.iconPath = '',  // Path to SVG or image file
+    this.iconData = Icons.home,  // Default to an IconData if no path is provided
   }) : assert(iconPath.isNotEmpty || iconData != null);
 }
-
-
-
-
-
-
-
-

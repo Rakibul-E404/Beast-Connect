@@ -1,0 +1,73 @@
+final List<Map<String, dynamic>> Connections = [
+  {
+    "name": "Afsana",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": true,
+  },
+  {
+    "name": "Ariyan",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": false,
+  },
+  {
+    "name": "Afsana",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": true,
+  },
+  {
+    "name": "Ariyan",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": false,
+  },
+  {
+    "name": "Afsana",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": true,
+  },
+  {
+    "name": "Ariyan",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": false,
+  },
+  {
+    "name": "Afsana",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": true,
+  },
+  {
+    "name": "Ariyan",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": false,
+  },
+  {
+    "name": "Afsana",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": true,
+  },
+  {
+    "name": "Ariyan",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "active": false,
+  },
+  // Add other items here...
+];
