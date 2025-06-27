@@ -142,7 +142,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:beast_connect/auth/signin_screen/signIn_screen_ui.dart';
+import 'package:beast_connect/auth/signIn_screen_ui.dart';
 
 class ResetPasswordScreenController extends GetxController {
   final passwordController = TextEditingController();

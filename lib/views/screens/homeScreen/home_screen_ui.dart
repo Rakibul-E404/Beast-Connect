@@ -1,5 +1,4 @@
 import 'package:beast_connect/views/screens/challange_screen/challange_screen_ui.dart';
-import 'package:beast_connect/views/screens/communitiesScreen/communities_screen_ui.dart';
 import 'package:beast_connect/views/screens/connectionScreen/connection_screen_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +7,7 @@ import '../../../utils/asset_path.dart';
 import '../../../widget/font/customAppFontStyle.dart';
 import '../../../widget/navigationBars/customBottomNavigationBar.dart';
 import '../../controller/home_screen_controller.dart';
+import '../communicateScreen/communicate_screen_ui.dart';
 import 'home_screen_widget/joinCallWidget.dart';
 import 'home_screen_widget/nextEventWidget.dart';
 import 'home_screen_widget/popularConnectionsWidget.dart';
@@ -38,6 +38,7 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         elevation: 0,
         toolbarHeight: 220,
@@ -48,7 +49,7 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
               offset: const Offset(0, -25),
               child: SizedBox.expand(
                 child: Image.asset(
-                  'assets/image/Vector 3.png',
+                  'assets/image/appbar_image.png',
                   fit: BoxFit.scaleDown,
                 ),
               ),
@@ -304,36 +305,38 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
         ),
       ),
 
-      bottomNavigationBar: CustomBottomNavBar(
-        items: [
-          BottomNavItem(label: 'Home', iconPath: 'assets/icon/home_icon.svg'),
-          BottomNavItem(label: 'Connection', iconPath: 'assets/icon/loveNew_icon.svg'),
-          BottomNavItem(label: 'Challenge', iconPath: 'assets/icon/frame_icon.svg'),
-          BottomNavItem(label: 'Communicate', iconPath: 'assets/icon/group_icon.svg'),
-          BottomNavItem(label: 'Profile', iconPath: 'assets/icon/profile_icon.svg'),
-        ],
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          if (index == 1)
-            {Get.to(()=> ConnectionScreenUi(screenWidth: MediaQuery.of(context).size.width,));}
-          if (index == 2)
-            {Get.to(()=> ChallengeScreenUi());}
-          if (index == 3)
-            {Get.to(()=> CommunitiesEventScreenUi());}
-          setState(() {
-            _currentIndex = index;  // Update the current index
-          });
-          _pageController.jumpToPage(index);  // Navigate to the selected screen
-        },
-        backgroundColor: Colors.black,
-        iconColor: Colors.white54,
-        selectedIconColor: Colors.orange,
-        iconLabelColor: Colors.white,
-        selectedIconLabelColor: Colors.orange,
-      ),
+      // bottomNavigationBar: CustomBottomNavBar(
+      //   items: [
+      //     BottomNavItem(label: 'Home', iconPath: 'assets/icon/home_icon.svg'),
+      //     BottomNavItem(label: 'Connection', iconPath: 'assets/icon/loveNew_icon.svg'),
+      //     BottomNavItem(label: 'Challenge', iconPath: 'assets/icon/frame_icon.svg'),
+      //     BottomNavItem(label: 'Communicate', iconPath: 'assets/icon/group_icon.svg'),
+      //     BottomNavItem(label: 'Profile', iconPath: 'assets/icon/profile_icon.svg'),
+      //   ],
+      //   currentIndex: _currentIndex,
+      //   onTap: (index) {
+      //     if (index == 1)
+      //       {Get.to(()=> ConnectionScreenUi(screenWidth: MediaQuery.of(context).size.width,));}
+      //     if (index == 2)
+      //       {Get.to(()=> ChallengeScreenUi());}
+      //     if (index == 3)
+      //       {Get.to(()=> CommunicateEventScreenUi());}
+      //     setState(() {
+      //       _currentIndex = index;  // Update the current index
+      //     });
+      //     _pageController.jumpToPage(index);  // Navigate to the selected screen
+      //   },
+      //   backgroundColor: Colors.black,
+      //   iconColor: Colors.white54,
+      //   selectedIconColor: Colors.orange,
+      //   iconLabelColor: Colors.white,
+      //   selectedIconLabelColor: Colors.orange,
+      // ),
     );
   }
 }
+
+
 
 
 
