@@ -1,4 +1,5 @@
-import 'package:beast_connect/views/screens/challange_screen/challange_screen_ui.dart';
+import 'package:beast_connect/views/screens/Profile/profile_screen.dart';
+import 'package:beast_connect/views/screens/challenge_screen/challenge_screen_ui.dart';
 import 'package:beast_connect/views/screens/communicateScreen/communicate_screen_ui.dart';
 import 'package:beast_connect/views/screens/connectionScreen/connection_screen_ui.dart';
 import 'package:beast_connect/views/screens/homeScreen/home_screen_ui.dart';
@@ -30,7 +31,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     ConnectionScreenUi(screenWidth: double.infinity),
     ChallengeScreenUi(),
     CommunicateEventScreenUi(),
-    ProfileSetUpAudioUi(), // Assuming ProfileScreenUi is defined
+    ProfileScreen(),
   ];
 
   @override

@@ -1,13 +1,9 @@
-import 'package:beast_connect/views/screens/challange_screen/challange_screen_ui.dart';
-import 'package:beast_connect/views/screens/connectionScreen/connection_screen_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/asset_path.dart';
 import '../../../widget/font/customAppFontStyle.dart';
-import '../../../widget/navigationBars/customBottomNavigationBar.dart';
 import '../../controller/home_screen_controller.dart';
-import '../communicateScreen/communicate_screen_ui.dart';
 import 'home_screen_widget/joinCallWidget.dart';
 import 'home_screen_widget/nextEventWidget.dart';
 import 'home_screen_widget/popularConnectionsWidget.dart';
@@ -24,7 +20,6 @@ class HomeScreenUi extends StatefulWidget {
 class _HomeScreenUiState extends State<HomeScreenUi> {
   final HomeScreenController controller = Get.put(HomeScreenController());
   final PageController _pageController = PageController();
-  int _currentIndex = 0;  // To track the selected index
 
   List<dynamic> rankedUsers = [
     {'name': 'User 1', 'score': 100, 'image': 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80'},
@@ -46,7 +41,7 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
           children: [
             // Background Image
             Transform.translate(
-              offset: const Offset(0, -25),
+              offset: const Offset(0, -30),
               child: SizedBox.expand(
                 child: Image.asset(
                   'assets/image/appbar_image.png',
@@ -93,7 +88,7 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                     ),
                   ),
                   Transform.translate(
-                    offset: const Offset(0, -12),
+                    offset: const Offset(0, -20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

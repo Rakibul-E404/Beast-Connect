@@ -15,6 +15,7 @@ class AppColors {
 
   ///icon color
   static const Color primaryIconColor = Color(0xFFFFFFFF); //used in app
+  static const Color filterIconCircleColor = Color(0xFF866318); //used in app
 
   ///text Input field
   static const Color inputFieldBackgroundColor = Color(0xff000000);//used in app

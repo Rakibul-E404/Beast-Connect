@@ -1,12 +1,8 @@
-import 'package:beast_connect/views/screens/homeScreen/home_screen_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../../../utils/app_colors.dart';
 import '../../../widget/buttons/Custom_Elevated_Button.dart';
 import '../../../widget/buttons/Custom_Outline_Button.dart';
-import '../../../widget/navigationBars/customBottomNavigationBar.dart';
 import '../../controller/connection_screen_controller.dart';
-import '../communicateScreen/communicate_screen_ui.dart';
 
 class ConnectionScreenUi extends StatefulWidget {
   final double screenWidth;
@@ -21,12 +17,10 @@ class ConnectionScreenUi extends StatefulWidget {
 }
 
 class _ConnectionScreenUiState extends State<ConnectionScreenUi> {
-  final PageController _pageController = PageController();
-  int _currentIndex = 1;
 
   void _showModalBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      isDismissible: false,
+      isDismissible: true,
       context: context,
       builder: (context) {
         return Container(
@@ -126,81 +120,83 @@ class _ConnectionScreenUiState extends State<ConnectionScreenUi> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Match List'),
+        backgroundColor: Colors.black,
+        title: Text('Match List',style: TextStyle(color: Colors.white,fontSize: 25),),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Get.to(HomeScreenUi()); // Go back to previous screen
-          },
-          icon: Icon(Icons.arrow_back_ios),
-        ),
         actions: [
-          IconButton(
-            onPressed: () {
-              _showModalBottomSheet(context); // Show sorting options
-            },
-            icon: Icon(Icons.sort),
+          CircleAvatar(
+            backgroundColor: AppColors.filterIconCircleColor,
+            radius: 20,
+            child: IconButton(
+              onPressed: () {
+                _showModalBottomSheet(context); // Show sorting options
+              },
+              icon: Icon(Icons.filter_alt,color: AppColors.primaryIconColor,size: 23,),
+            ),
           ),
         ],
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Set the number of columns
-          crossAxisSpacing: 12, // Space between columns
-          mainAxisSpacing: 12, // Space between rows
-        ),
-        itemCount: Connections.length, // Using the static data
-        itemBuilder: (context, index) {
-          var user = Connections[index]; // Accessing the static data
-          return Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              image: DecorationImage(
-                image: NetworkImage(user['image'] as String),
-                fit: BoxFit.cover,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // Set the number of columns
+            crossAxisSpacing: 12, // Space between columns
+            mainAxisSpacing: 12, // Space between rows
+          ),
+          itemCount: Connections.length, // Using the static data
+          itemBuilder: (context, index) {
+            var user = Connections[index]; // Accessing the static data
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                image: DecorationImage(
+                  image: NetworkImage(user['image'] as String),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            child: Stack(
-              children: [
-                Positioned(
-                  bottom: 12,
-                  left: 12,
-                  right: 12,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.black54,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
-                      children: [
-                        Text(
-                          "${user['name']} - ${user['age']}",
-                          style: const TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.circle,
-                          color: (user['active'] as bool)
-                              ? Colors.greenAccent
-                              : Colors.grey,
-                          size: 12,
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          (user['active'] as bool) ? "Active" : "Offline",
-                          style: const TextStyle(
-                              color: Colors.white70, fontSize: 12),
-                        ),
-                      ],
+              child: Stack(
+                children: [
+                  Positioned(
+                    bottom: 12,
+                    left: 12,
+                    right: 12,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.black54,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            "${user['name']} - ${user['age']}",
+                            style: const TextStyle(
+                                color: Colors.white, fontWeight: FontWeight.bold),
+                          ),
+                          const Spacer(),
+                          Icon(
+                            Icons.circle,
+                            color: (user['active'] as bool)
+                                ? Colors.greenAccent
+                                : Colors.grey,
+                            size: 12,
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            (user['active'] as bool) ? "Active" : "Offline",
+                            style: const TextStyle(
+                                color: Colors.white70, fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          );
-        },
+                ],
+              ),
+            );
+          },
+        ),
       ),
       // bottomNavigationBar: CustomBottomNavBar(
       //   items: [
