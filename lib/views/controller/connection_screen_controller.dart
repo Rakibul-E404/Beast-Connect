@@ -1,73 +1,204 @@
+import 'package:flutter/material.dart';
+import '../../../utils/app_colors.dart';
+import '../../../widget/buttons/Custom_Elevated_Button.dart';
+import '../../../widget/buttons/Custom_Outline_Button.dart';
+
+class ConnectionScreenController {
+
+  void showFilterBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      isDismissible: true,
+      context: context,
+      builder: (context) {
+        return Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(child: Text('Filters', style: Theme.of(context).textTheme.titleLarge)),
+              SizedBox(height: 20), // Add some space before the button
+
+              CustomOutlinedButton(
+                onPressed: () {
+                  _onHobbiesPressed();
+                },
+                buttonText: 'Hobbies',
+                textColor: AppColors.primaryTextColor,
+                isFullWidth: true,
+                isRounded: true,
+                height: 44,
+                suffixIcon: Icon(Icons.arrow_forward_ios),
+                iconColor: AppColors.primaryColor,
+                foregroundColor: AppColors.primaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              ),
+              SizedBox(height: 20),
+              CustomOutlinedButton(
+                onPressed: () {
+                  _onNetworkingPressed();
+                },
+                buttonText: 'Networking',
+                textColor: AppColors.primaryTextColor,
+                isFullWidth: true,
+                isRounded: true,
+                height: 44,
+                suffixIcon: Icon(Icons.arrow_forward_ios),
+                iconColor: AppColors.primaryColor,
+                foregroundColor: AppColors.primaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              ),
+              SizedBox(height: 20),
+              CustomOutlinedButton(
+                onPressed: () {
+                  _onFriendsPressed();
+                },
+                buttonText: 'Friends',
+                textColor: AppColors.primaryTextColor,
+                isFullWidth: true,
+                isRounded: true,
+                height: 44,
+                suffixIcon: Icon(Icons.arrow_forward_ios),
+                iconColor: AppColors.primaryColor,
+                foregroundColor: AppColors.primaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              ),
+              SizedBox(height: 20),
+              Container(
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [AppColors.primaryColor, AppColors.secondaryColor],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: CustomElevatedButton(
+                  onPressed: () {
+                    _onApplyPressed(context);
+                  },
+                  buttonText: 'Apply',
+                  textColor: AppColors.secondaryTextColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  isFullWidth: true,
+                  isRounded: true,
+                  height: 48,
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  hasShadow: false,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // Filter option handlers - implement your logic here
+  void _onHobbiesPressed() {
+    // TODO: Implement hobbies filter logic
+    debugPrint('Hobbies filter selected');
+  }
+
+  void _onNetworkingPressed() {
+    // TODO: Implement networking filter logic
+    debugPrint('Networking filter selected');
+  }
+
+  void _onFriendsPressed() {
+    // TODO: Implement friends filter logic
+    debugPrint('Friends filter selected');
+  }
+
+  void _onApplyPressed(BuildContext context) {
+    // TODO: Implement apply filter logic
+    debugPrint('Apply filters');
+    Navigator.pop(context); // Close the bottom sheet
+  }
+}
+
+
+// Connections data (keep this in a separate file or model)
 final List<Map<String, dynamic>> Connections = [
   {
     "name": "Afsana",
+    "gender": "Female",
     "age": 23,
     "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+    "active": true,
+  },
+  {
+    "name": "Mim",
+    "gender": "Female",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
   },
   {
     "name": "Ariyan",
+    "gender": "Male",
     "age": 23,
     "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+    "active": false,
+  },
+  {
+    "name": "Ariyan",
+    "gender": "Male",
+    "age": 23,
+    "location": "San Francisco",
+    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": false,
   },
   {
     "name": "Afsana",
+    "gender": "Female",
     "age": 23,
     "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
   },
   {
     "name": "Ariyan",
+    "gender": "Male",
     "age": 23,
     "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
-    "active": false,
+    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+    "active": true,
   },
   {
     "name": "Afsana",
+    "gender": "Female",
     "age": 23,
     "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
   },
   {
     "name": "Ariyan",
+    "gender": "Male",
     "age": 23,
     "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
-    "active": false,
-  },
-  {
-    "name": "Afsana",
-    "age": 23,
-    "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
   },
   {
-    "name": "Ariyan",
+    "name": "Arfa",
+    "gender": "Female",
     "age": 23,
     "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
-    "active": false,
-  },
-  {
-    "name": "Afsana",
-    "age": 23,
-    "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
   },
-  {
-    "name": "Ariyan",
-    "age": 23,
-    "location": "San Francisco",
-    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
-    "active": false,
-  },
-  // Add other items here...
+
 ];

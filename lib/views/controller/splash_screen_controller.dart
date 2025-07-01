@@ -6,7 +6,6 @@ class SplashScreenController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
     // Simulate a delay and navigate
     Future.delayed(Duration(seconds: 3), () {
       // Get.off(() => OnboardScreen());

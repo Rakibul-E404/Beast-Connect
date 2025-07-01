@@ -29,6 +29,8 @@ class AppColors {
   /// verify box color
   static const Color verifyBoxColor = Color(0xFFEEEEEE);//used in app
 
+  /// box container color
+  static const Color boxContainerColor = Color(0XFF232736);//used
 
   ///NOT SELECTED YET
   static const Color error_message = Color(0xFFB00020);
