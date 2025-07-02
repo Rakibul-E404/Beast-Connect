@@ -160,7 +160,7 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                       const SizedBox(width: 12),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.grey[900],
+                          color: Colors.transparent,
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
@@ -171,7 +171,7 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                           ],
                         ),
                         child: IconButton(
-                          icon: const Icon(Icons.image, color: Colors.white54),
+                          icon: const Icon(Icons.image,size: 30, color: Colors.orange),
                           onPressed: () {
                             // Your image upload code here
                           },

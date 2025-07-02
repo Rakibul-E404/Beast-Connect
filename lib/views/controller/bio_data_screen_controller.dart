@@ -80,7 +80,7 @@
 //   }
 // }
 
-
+/// Todo: trying to play videos
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -151,7 +151,7 @@ class BioDataScreenController {
               padding: const EdgeInsets.only(right: 8.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: VideoPlayerWidget(url: 'https://www.sample-videos.com/video123/mp4/480/asdasdas.mp4'), // Replace with actual video URL
+                child: VideoPlayerWidget(url: 'https://www.w3schools.com/html/mov_bbb.mp4'), // Replace with actual video URL
               ),
             );
           },
@@ -161,9 +161,10 @@ class BioDataScreenController {
   }
 }
 
+
 class VideoPlayerWidget extends StatefulWidget {
   final String url;
-  VideoPlayerWidget({required this.url});
+  const VideoPlayerWidget({super.key, required this.url});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
@@ -171,24 +172,31 @@ class VideoPlayerWidget extends StatefulWidget {
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   late VideoPlayerController _controller;
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(widget.url)
       ..initialize().then((_) {
-        setState(() {});
+        setState(() {
+          _isLoading = false;  // Set loading state to false after initialization
+        });
       });
   }
 
   @override
   Widget build(BuildContext context) {
-    return _controller.value.isInitialized
-        ? AspectRatio(
+    // Show loading indicator while the video is being initialized
+    if (_isLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
+
+    // If video is ready, display it
+    return AspectRatio(
       aspectRatio: _controller.value.aspectRatio,
       child: VideoPlayer(_controller),
-    )
-        : Center(child: CircularProgressIndicator());
+    );
   }
 
   @override

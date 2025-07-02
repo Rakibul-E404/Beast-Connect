@@ -135,6 +135,12 @@ final List<Map<String, dynamic>> Connections = [
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
   {
     "name": "Mim",
@@ -143,22 +149,40 @@ final List<Map<String, dynamic>> Connections = [
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
   {
-    "name": "Ariyan",
+    "name": "Arian",
     "gender": "Male",
     "age": 23,
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": false,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
   {
-    "name": "Ariyan",
+    "name": "Arian",
     "gender": "Male",
     "age": 23,
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": false,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
   {
     "name": "Afsana",
@@ -167,6 +191,12 @@ final List<Map<String, dynamic>> Connections = [
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
   {
     "name": "Ariyan",
@@ -175,6 +205,12 @@ final List<Map<String, dynamic>> Connections = [
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
   {
     "name": "Afsana",
@@ -183,14 +219,26 @@ final List<Map<String, dynamic>> Connections = [
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
   {
-    "name": "Ariyan",
+    "name": "Arian",
     "gender": "Male",
     "age": 23,
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness.",
   },
   {
     "name": "Arfa",
@@ -199,6 +247,12 @@ final List<Map<String, dynamic>> Connections = [
     "location": "San Francisco",
     "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "active": true,
+    "dob": "11-22-3333",
+    "qualification": "dev",
+    "height":"5.6",
+    "status":"Single",
+    "religion":"Islam",
+    "about": "Hello there! I'mVickie, seeking a lifelong adventure partner. A blend of tradition and modernity, I find joy in the simple moments and cherish family values. With a heart that believes in love's magic, I'm looking for someone to share happiness."
   },
 
 ];
