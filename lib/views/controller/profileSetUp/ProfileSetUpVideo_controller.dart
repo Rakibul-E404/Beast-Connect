@@ -105,6 +105,7 @@
 
 
 
+import 'package:beast_connect/views/bottom_nav.dart';
 import 'package:get/get.dart';
 
 class ProfileSetUpVideoController extends GetxController {
@@ -113,7 +114,8 @@ class ProfileSetUpVideoController extends GetxController {
 
   /// Navigate to next screen (no video argument)
   void goToNextScreen() {
-    Get.toNamed('/next-screen');
+    // Get.toNamed('/next-screen');
+    Get.off(BottomNavScreen());
   }
 }
 

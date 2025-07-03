@@ -1,4 +1,5 @@
 import 'package:beast_connect/views/screens/bio_data/about_section.dart';
+import 'package:beast_connect/views/screens/bio_data/gallery_section.dart';
 import 'package:beast_connect/views/screens/bio_data/information_container_section.dart';
 import 'package:beast_connect/views/screens/bio_data/interests_section.dart';
 import 'package:beast_connect/views/screens/bio_data/video_section.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 import '../../../utils/app_colors.dart';
+import 'music_section.dart';
 import 'name_age_location_section.dart';
 
 class BioDataScreen extends StatefulWidget {
@@ -116,7 +118,13 @@ class _BioDataScreenState extends State<BioDataScreen> {
                             const SizedBox(height: 20),
                             /// Videos Section
                             VideoSection(),
-                            const SizedBox(height: 30),
+                            const SizedBox(height: 20),
+                            /// Music Section
+                            MusicSection(),
+                            const SizedBox(height: 20),
+                            /// Gallery Section
+                            GallerySection(),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),

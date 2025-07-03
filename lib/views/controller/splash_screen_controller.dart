@@ -8,8 +8,8 @@ class SplashScreenController extends GetxController {
     super.onInit();
     // Simulate a delay and navigate
     Future.delayed(Duration(seconds: 3), () {
-      // Get.off(() => OnboardScreen());
-      Get.off(() => BottomNavScreen());
+      Get.off(() => OnboardScreen());
+      // Get.off(() => BottomNavScreen());
     });
   }
 }

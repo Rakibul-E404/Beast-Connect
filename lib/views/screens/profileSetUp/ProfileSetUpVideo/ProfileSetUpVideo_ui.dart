@@ -479,7 +479,10 @@ class ProfileSetUpVideoUi extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () => Get.to(HomeScreenUi()),
+              // onPressed: () => Get.to(HomeScreenUi()),
+              onPressed: () {
+                controller.goToNextScreen();
+              },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 48), // full width & fixed height
                 shape: RoundedRectangleBorder(
@@ -493,8 +496,8 @@ class ProfileSetUpVideoUi extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppColors.primaryColor.withOpacity(1.0),
-                      AppColors.secondaryColor.withOpacity(1.0),
+                      AppColors.primaryColor.withValues(alpha: 1.0),
+                      AppColors.secondaryColor.withValues(alpha: 1.0),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(32),

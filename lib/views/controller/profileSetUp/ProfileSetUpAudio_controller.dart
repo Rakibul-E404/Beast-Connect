@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:audioplayers/audioplayers.dart';
 import '../../screens/profileSetUp/ProfileSetUpVideo/ProfileSetUpVideo_ui.dart';
@@ -74,7 +75,7 @@ class ProfileSetUpAudioController extends GetxController {
       await _audioPlayer.play(AssetSource(song.audioAssetPath.replaceFirst('assets/', '')));
       selectedIndex.value = index;
     } catch (e) {
-      print('Error playing song: $e');
+     debugPrint('Error playing song: $e');
     }
   }
 
