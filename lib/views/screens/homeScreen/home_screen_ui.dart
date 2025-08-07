@@ -121,22 +121,28 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: [
-                    CircleAvatar(
-                      radius: 18,
-                      backgroundImage: NetworkImage(
-                        controller.popularConnections.isNotEmpty
-                            ? controller.popularConnections[0]['image'] as String
-                            : 'https://via.placeholder.com/150',
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: AppColors.primaryColor,
+                          width: 2,
+                        )
                       ),
-                      backgroundColor: Colors.grey[700],
+                      child: CircleAvatar(
+                        radius: 18,
+                        backgroundImage: NetworkImage(
+                          controller.popularConnections.isNotEmpty
+                              ? controller.popularConnections[0]['image'] as String
+                              : 'https://via.placeholder.com/150',
+                        ),
+                        backgroundColor: Colors.grey[700],
+                      ),
                     ),
                     const SizedBox(width: 12),
-/*
                     Expanded(
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12),
                         decoration: BoxDecoration(
-                          color: Colors.grey[900],
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -145,49 +151,32 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                               offset: const Offset(0, 3),
                             ),
                           ],
+                          gradient: LinearGradient(
+                            colors: [AppColors.primaryColor, AppColors.secondaryColor],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                         ),
-                        child: const TextField(
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
-                            icon: Icon(Icons.search, color: Colors.white54),
-                            hintText: "Share your thoughts",
-                            hintStyle: TextStyle(color: Colors.white54),
-                            border: InputBorder.none,
-                            isDense: true,
-                            contentPadding: EdgeInsets.symmetric(vertical: 8),
+                        padding: const EdgeInsets.all(2), // Border thickness
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey[900], // Background color
+                            borderRadius: BorderRadius.circular(22), // Inner radius
+                          ),
+                          child: const TextField(
+                            style: TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.search, color: Colors.white54),
+                              hintText: "Share your thoughts",
+                              hintStyle: TextStyle(color: Colors.white54),
+                              border: InputBorder.none,
+                              isDense: true,
+                              contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                            ),
                           ),
                         ),
                       ),
                     ),
-*/
-
-
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        width: 3,
-                        style: BorderStyle.solid,
-                        color: Colors.transparent, // Initially set to transparent
-                      ),
-                      gradient: LinearGradient(
-                        colors: [Colors.pink, Colors.orange],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.blue[50], // Inside color of the text field
-                        filled: true,
-                        border: InputBorder.none, // Removes the default border
-                        hintText: 'Enter text here',
-                        hintStyle: TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                  ),
-
 
                     const SizedBox(width: 12),
                     Container(
@@ -413,12 +402,23 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: screenWidth * 0.06,
-                  backgroundImage:
-                  NetworkImage(controller.popularConnections[0]['image'] as String),
-                ),
                 const SizedBox(width: 12),
+                // Expanded(
+                //   child: Container(
+                //     padding: const EdgeInsets.all(12),
+                //     decoration: BoxDecoration(
+                //       color: Colors.grey[900],
+                //       borderRadius: BorderRadius.circular(12),
+                //     ),
+                //     child: Text(
+                //       controller.userMessage,
+                //       style: const TextStyle(color: Colors.white),
+                //     ),
+                //
+                //   ),
+                // ),
+
+
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(12),
@@ -426,14 +426,62 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                       color: Colors.grey[900],
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Text(
-                      controller.userMessage,
-                      style: const TextStyle(color: Colors.white),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  radius: screenWidth * 0.06,
+                                  backgroundImage:
+                                  NetworkImage(controller.popularConnections[0]['image'] as String),
+                                ),
+                                SizedBox(width: 10,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("User User User",style: TextStyle(color: Colors.white,fontSize: 25),),
+                                    Text("1Hour",style: TextStyle(color: Colors.white,fontSize: 15),),
+                                  ],
+                                ),
+                                SizedBox(width: 100,),
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){}, icon: Icon(Icons.cancel_outlined)),
+
+                                  ],
+                                ),
+                              ],
+                            ),
+
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    controller.userMessage,
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8), // Optional: Adds space between the text and divider
+                        const Divider(
+                          color: Colors.white, // Color of the divider
+                          thickness: 1,         // Thickness of the divider
+                        ),
+
+                      ],
                     ),
                   ),
                 ),
+
+
                 const SizedBox(width: 8),
-                const Icon(Icons.more_vert, color: Colors.white54),
               ],
             ),
 
