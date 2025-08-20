@@ -7,6 +7,7 @@ class AppColors {
   static const Color primaryColor = Color(0xFFFF7900); //used in app
   static const Color secondaryColor = Color(0xFF02AEF4); //used in app
   static const Color tertiaryColor = Color(0xFF121212); //used in app
+  static const Color quaternaryColor = Color(0xFF21242C); //used in app
   static const Color backgroundColor = Color(0xFF1D1D1D); //used in app
 
   ///text color

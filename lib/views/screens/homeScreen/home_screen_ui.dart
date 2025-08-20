@@ -116,17 +116,33 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        IconButton(
-                          icon: const Icon(Icons.notifications_none),
-                          onPressed: () {},
-                          color: Colors.white,
-                          iconSize: 28,
+                        Container(
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                              color: Colors.black.withValues(alpha: 0.12),  // Equivalent to alpha = 30 (out of 255)
+                              borderRadius: BorderRadius.circular(30)),
+                          child: IconButton(
+                            icon: const Icon(CupertinoIcons.bell),
+                            onPressed: () {},
+                            color: Colors.white,
+                            iconSize: 28,
+                          ),
                         ),
-                        IconButton(
-                          icon: const Icon(Icons.chat_bubble_outline),
-                          onPressed: () {},
-                          color: Colors.white,
-                          iconSize: 28,
+                        SizedBox(width: 10,),
+                        Container(
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                              color: Colors.black.withValues(alpha: 0.12),  // Equivalent to alpha = 30 (out of 255)
+                              borderRadius: BorderRadius.circular(30)),
+                          child: IconButton(
+                            // icon: const Icon(Icons.chat_bubble_outline),
+                            icon: const Icon(CupertinoIcons.chat_bubble),
+                            onPressed: () {},
+                            color: Colors.white,
+                            iconSize: 28,
+                          ),
                         ),
                       ],
                     ),
@@ -246,11 +262,15 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
         ),
       ),
 
+
+
+
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
-        child: Column(
+         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
             // Filter Buttons with controller logic
             Obx(() {
               return SingleChildScrollView(
@@ -288,12 +308,12 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(width: 12),
-
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.grey[900],
+                      // color: Colors.white,
+                      color: AppColors.quaternaryColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Column(
@@ -301,13 +321,6 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            /*CircleAvatar(
-                              radius: screenWidth * 0.06,
-                              backgroundImage: NetworkImage(
-                                controller.popularConnections[0]['image']
-                                    as String,
-                              ),
-                            ),*/
                             Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
@@ -385,11 +398,6 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                           ],
                         ),
                         const SizedBox(height: 8),
-                        // Optional: Adds space between the text and divider
-                        // const Divider(
-                        //   color: Colors.white, // Color of the divider
-                        //   thickness: 2, // Thickness of the divider
-                        // ),
                         Container(
                           width: MediaQuery.sizeOf(context).width,
                           color: Colors.grey.withValues(alpha: 0.5),
@@ -402,37 +410,47 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                           children: [
                             Icon(
                               Icons.thumb_up_outlined,
-                              color: Colors.red,
-                              weight: 100,
+                              color: AppColors.primaryColor,
+                              weight: 50 /*AppColors.primaryColor*/,
                             ),
-
-                            // Icon(
-                            //   Icons.thumb_up_outlined,
-                            //   color: CupertinoColors.systemYellow,
-                            //   weight: 50 /*AppColors.primaryColor*/,
-                            // ),
-                            // Icon(
-                            //   Icons.mode_comment_outlined,
-                            //   color: CupertinoColors.systemYellow,
-                            //   weight: 50 /*AppColors.primaryColor*/,
-                            // ),
+                            Icon(
+                              CupertinoIcons.chat_bubble,
+                              color: AppColors.primaryColor,
+                              weight: 50 /*AppColors.primaryColor*/,
+                            ),
                           ],
                         ),
                       ],
                     ),
                   ),
                 ),
-
                 const SizedBox(width: 8),
               ],
             ),
 
             const SizedBox(height: 20),
 
-            buildSectionHeader('Popular Connections'),
-            PopularConnectionsWidget(
-              popularConnections: controller.popularConnections,
-              screenWidth: screenWidth,
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                color: AppColors.quaternaryColor,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      buildSectionHeader('Popular Connections'),
+                      SizedBox(height: 10,),
+                      PopularConnectionsWidget(
+                        popularConnections: controller.popularConnections,
+                        screenWidth: screenWidth,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
             const SizedBox(height: 20),
 
@@ -519,3 +537,8 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
     );
   }
 }
+
+
+
+
+

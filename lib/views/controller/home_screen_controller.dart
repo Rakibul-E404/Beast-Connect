@@ -28,17 +28,28 @@ class HomeScreenController extends GetxController {
     {
       "name": "Afsana",
       "age": 23,
+      "gender": "Female",
       "location": "San Francisco",
       "image":
       "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
       "active": true,
     },
     {
-      "name": "Ariyan",
+      "name": "Joya Habib",
       "age": 23,
+      "gender": "Female",
       "location": "San Francisco",
       "image":
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK2PEVKLr4P_EMy2PV3C-AE9X2XGAjvKoAlw&s",
+      "active": true,
+    },
+    {
+      "name": "Ariyan",
+      "age": 23,
+      "gender": "Male",
+      "location": "San Francisco",
+      "image":
+      "https://www.shutterstock.com/image-photo/smiling-young-middle-eastern-man-260nw-2063524544.jpg",
       "active": false,
     },
   ];
