@@ -37,7 +37,7 @@ class SignUpScreenController extends GetxController {
       return;
     }
     // Add your signup logic here
-    print('Signing up user...');
+   // print('Signing up user...');
   }
 
   @override

@@ -1,4 +1,5 @@
-import 'package:beast_connect/auth/signup_screen/signUp_screen_ui.dart';
+import 'package:beast_connect/auth/signUp_screen_ui.dart';
+import 'package:beast_connect/views/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,8 @@ class SignInScreenController extends GetxController {
     final email = emailController.text.trim();
     final password = passwordController.text;
 
-    if (!GetUtils.isEmail(email)) {
+    ///todo:: =========[remove the comment to apply the logic]============
+    /*if (!GetUtils.isEmail(email)) {
       Get.snackbar('Invalid Email', 'Please enter a valid email address.');
       return;
     }
@@ -28,10 +30,10 @@ class SignInScreenController extends GetxController {
     if (password.isEmpty) {
       Get.snackbar('Empty Password', 'Password cannot be empty.');
       return;
-    }
+    }*/
 
     // TODO.text: Connect this to your sign-in API/auth logic
-    Get.snackbar('Success', 'Signed in successfully!');
+    Get.off(BottomNavScreen());
   }
 
   /// Handles Google sign-in (to be implemented)

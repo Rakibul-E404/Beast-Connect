@@ -66,8 +66,8 @@ class _CustomInputFieldState extends State<CustomInputField> {
           keyboardType: widget.keyboardType ?? TextInputType.number,
           validator: widget.validator,
           onChanged: widget.onChanged,
-          maxLength: 1,
-          textAlign: TextAlign.center,
+          // maxLength: 1,
+          textAlign: TextAlign.left,
           style: GoogleFonts.outfit(
             fontSize: 18,
             color: widget.textColor ?? AppColors.secondaryTextColor, // <-- use textColor or fallback
@@ -94,6 +94,11 @@ class _CustomInputFieldState extends State<CustomInputField> {
             suffixIcon: _buildSuffixIcon(),
           ),
         ),
+
+
+
+
+
       ),
     );
   }
@@ -162,3 +167,6 @@ class _CustomInputFieldState extends State<CustomInputField> {
     return null;
   }
 }
+
+
+

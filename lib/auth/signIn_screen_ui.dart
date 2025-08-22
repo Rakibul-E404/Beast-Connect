@@ -1,3 +1,4 @@
+import 'package:beast_connect/views/screens/homeScreen/home_screen_ui.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:beast_connect/utils/app_colors.dart';
@@ -101,7 +102,6 @@ class SignInScreenUi extends StatelessWidget {
 
                   const SizedBox(height: 28),
 
-
                   SizedBox(
                     width: double.infinity,
                     child: Column(
@@ -123,7 +123,9 @@ class SignInScreenUi extends StatelessWidget {
                               child:
                               CustomElevatedButton(
                                 onPressed: (){
-                                  /// todo
+                                  // Get.offAll(HomeScreenUi());
+                                  ///todo::
+                                  controller.signIn();
                                 },
                                 buttonText: 'Sign In',
                                 textColor: AppColors.secondaryTextColor,

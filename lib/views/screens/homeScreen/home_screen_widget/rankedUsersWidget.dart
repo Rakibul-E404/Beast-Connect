@@ -1,17 +1,38 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RankedUsersWidget extends StatelessWidget {
   final List<dynamic> rankedUsers; // The ranked users data
   final double screenWidth; // The screen width to calculate sizes
 
   const RankedUsersWidget({
-    Key? key,
+    super.key,
     required this.rankedUsers,
     required this.screenWidth,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+
+
+    List<dynamic> rankedUsers = [
+      {
+        'name': 'Hafsa',
+        'score': 100,
+        'image':
+        'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80',
+      },
+      {
+        'name': 'Mim',
+        'score': 200,
+        'image':
+        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
+      },
+      // Add more users here
+    ];
+
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -88,7 +109,7 @@ class RankedUsersWidget extends StatelessWidget {
                       top: 0,
                       left: -2,
                       child: Icon(
-                        Icons.emoji_events,
+                        FontAwesomeIcons.crown,
                         color: Colors.orange,
                         size: screenWidth * 0.07,
                       ),
