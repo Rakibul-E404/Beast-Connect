@@ -298,7 +298,9 @@ class JoinCallWidget extends StatelessWidget {
                                 ],
                               ),
 
-                              // Bottom row with time and duration
+                              ///
+                              ///:::::::::::::::: Bottom row with time and duration ::::::::::::::::
+                              ///
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,

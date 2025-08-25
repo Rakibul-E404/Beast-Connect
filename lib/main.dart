@@ -11,13 +11,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Views/Screens/Splash/splash_screen.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 // void main() {
-//   runApp(DevicePreview(builder:(context)=> MyApp()));
+//   runApp(MyApp());
 // }
+
+void main() {
+  runApp(DevicePreview(builder:(context)=> MyApp()));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

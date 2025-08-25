@@ -1,9 +1,12 @@
 import 'package:beast_connect/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
 import '../../../../controller/home_screen_controller.dart';
+import '../../../public_user_leaderboard/public_user_leaderboard.dart';
 
 class FitnessTagSection extends StatefulWidget {
   final double screenWidth;
@@ -51,38 +54,45 @@ class _FitnessTagSectionState extends State<FitnessTagSection> {
             color: AppColors.tertiaryColor,
           ),
           padding: EdgeInsets.all(16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    'Check ',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400,
+          child: InkWell(
+
+            /// todo,, set the page screen.
+            onTap: () {
+              Get.to(() => PublicUserLeaderboard());
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      'Check ',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Rankings',
-                    style: TextStyle(
-                      color: Colors.orange,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
+                    Text(
+                      'Rankings',
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(8),
+                  ],
                 ),
-                child: Icon(Icons.leaderboard, color: Colors.white, size: 20),
-              ),
-            ],
+                Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Icon(Icons.leaderboard, color: Colors.white, size: 20),
+                ),
+              ],
+            ),
           ),
         ),
 

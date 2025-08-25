@@ -1,144 +1,3 @@
-// import 'package:get/get.dart';
-//
-// class HomeScreenController extends GetxController {
-//   final currentTabIndex = 0.obs; // Tab index observable
-//
-//   // Filter tag index observable
-//   final filterTagIndex = 0.obs;
-//
-//   // List of filter tags
-//   final filterTags = <Map<String, String>>[
-//     {'name': 'All'},
-//     {'name': 'Fitness'},
-//     {'name': 'Cooking'},
-//     {'name': 'Drawing'},
-//     {'name': 'Quiz'},
-//   ];
-//
-//   // Selected tag (observable)
-//   final selectedTag = 'All'.obs;
-//
-//   void changeTabIndex(int index) {
-//     currentTabIndex.value = index;
-//   }
-//
-//   // Method to select tag based on tag name
-//   void selectTag(String tag) {
-//     selectedTag.value = tag;
-//     // Update the filterTagIndex when tag is selected
-//     int index = filterTags.indexWhere((filter) => filter['name'] == tag);
-//     if (index != -1) {
-//       filterTagIndex.value = index;
-//     }
-//   }
-//
-//   // Method to change the selected tag based on index
-//   void changeFilterTagIndex(int index) {
-//     if (index >= 0 && index < filterTags.length) {
-//       filterTagIndex.value = index;
-//       selectedTag.value = filterTags[index]['name']!;
-//     }
-//   }
-//
-//   var userName = "Afsana Hamid Mim";
-//   var userMessage =
-//       "I'm so happy using the BeastConnect app! I've discovered amazing games, exciting events, and so many advanced features that make every moment fun and meaningful. Loving the experience!";
-//
-//   final popularConnections = [
-//     {
-//       "name": "Afsana",
-//       "age": 23,
-//       "gender": "Female",
-//       "location": "San Francisco",
-//       "image":
-//       "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
-//       "active": true,
-//     },
-//     {
-//       "name": "Joya Habib",
-//       "age": 23,
-//       "gender": "Female",
-//       "location": "San Francisco",
-//       "image":
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK2PEVKLr4P_EMy2PV3C-AE9X2XGAjvKoAlw&s",
-//       "active": true,
-//     },
-//     {
-//       "name": "Ariyan",
-//       "age": 23,
-//       "gender": "Male",
-//       "location": "San Francisco",
-//       "image":
-//       "https://www.shutterstock.com/image-photo/smiling-young-middle-eastern-man-260nw-2063524544.jpg",
-//       "active": false,
-//     },
-//   ];
-//
-//   final nextEvents = [
-//     {
-//       "title": "Yoga Session",
-//       "image":
-//       "https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=400&q=80",
-//     },
-//     {
-//       "title": "Cooking Workshop",
-//       "image":
-//       "https://images.unsplash.com/photo-1516685018646-5494f8b3eab7?auto=format&fit=crop&w=400&q=80",
-//     },
-//   ];
-//
-//   var joinCalls = [
-//     {
-//       "name": "Call 1",
-//       "image": "https://example.com/image1.png",
-//       "event": "Event 1",
-//       "date": "2025-06-04",
-//       "duration": "30 mins",
-//     },
-//     {
-//       "name": "Call 2",
-//       "image": "https://example.com/image2.png",
-//       "event": "Event 2",
-//       "date": "2025-06-05",
-//       "duration": "45 mins",
-//     },
-//   ];
-//
-//   List<dynamic> rankedUsers = [
-//     {
-//       'name': 'User 1',
-//       'score': 100,
-//       'image':
-//       'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80'
-//     },
-//     {
-//       'name': 'User 2',
-//       'score': 200,
-//       'image':
-//       'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80'
-//     },
-//   ];
-//
-//   final rankedUserss = [
-//     {
-//       "name": "Afsana Hamid",
-//       "score": 95,
-//       "badge": "Beastly Challenger",
-//       "image":
-//       "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
-//     },
-//     {
-//       "name": "Ariya",
-//       "score": 94,
-//       "badge": "Beastly Challenger",
-//       "image":
-//       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
-//     },
-//   ];
-// }
-
-
-
 import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
@@ -163,7 +22,9 @@ class HomeScreenController extends GetxController {
     currentTabIndex.value = index;
   }
 
-  // Method to select tag based on tag name - UPDATED
+  ///
+  ///:::::::::::::::::::::: Method to select tag based on tag name - UPDATED ::::::::::::::::::::::::::
+  ///
   void selectTag(String tag) {
     selectedTag.value = tag;
     // Update the filterTagIndex when tag is selected
@@ -176,7 +37,9 @@ class HomeScreenController extends GetxController {
     // The content will be filtered in the UI instead of navigating
   }
 
-  // Method to change the selected tag based on index
+  ///
+  ///::::::::::::::::::::: Method to change the selected tag based on index :::::::::::::::::::::::::::
+  ///
   void changeFilterTagIndex(int index) {
     if (index >= 0 && index < filterTags.length) {
       filterTagIndex.value = index;
@@ -184,7 +47,9 @@ class HomeScreenController extends GetxController {
     }
   }
 
-  // Method to get filtered content based on selected tag
+  ///
+  ///:::::::::::::::::::::::: Method to get filtered content based on selected tag ::::::::::::::::::::::::::::::
+  ///
   List<Map<String, dynamic>> getFilteredContent() {
     switch (selectedTag.value) {
       case 'All':
@@ -298,7 +163,9 @@ class HomeScreenController extends GetxController {
     },
   ];
 
-  // Sample content data for different tags
+  ///
+  /// :::::::::::::::::::::::::: Sample content data for different tags :::::::::::::::::::::::
+  ///
   final List<Map<String, dynamic>> allContent = [
     {
       "type": "fitness",
