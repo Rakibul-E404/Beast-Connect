@@ -78,6 +78,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16),
+
                     ///
                     /// --------- subscription level--------------
                     ///
@@ -90,7 +91,10 @@ class ProfileScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: AppColors.quaternaryColor,
                         // Dark gray background
-                        border: Border.all(color: AppColors.primaryColor, width: 2),
+                        border: Border.all(
+                          color: AppColors.primaryColor,
+                          width: 2,
+                        ),
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Row(
@@ -111,6 +115,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 12),
+
                           ///-------------- BeastPlus text
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,6 +133,7 @@ class ProfileScreen extends StatelessWidget {
                                 ],
                               ),
                               SizedBox(height: 8),
+
                               ///------------- Months text
                               Row(
                                 children: [
@@ -144,6 +150,7 @@ class ProfileScreen extends StatelessWidget {
                             ],
                           ),
                           Spacer(),
+
                           /// ----------container with coin icon
                           Container(
                             padding: EdgeInsets.symmetric(

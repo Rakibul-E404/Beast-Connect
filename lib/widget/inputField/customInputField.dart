@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,9 +16,9 @@ class CustomInputField extends StatefulWidget {
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final Color hoverColor;
-  final Color? backgroundColor;   // persistent background color
+  final Color? backgroundColor; // persistent background color
   final Color iconColor;
-  final Color? textColor;         // NEW: dynamic text color
+  final Color? textColor; // NEW: dynamic text color
   final Color borderColor;
   final double borderRadius;
   final VoidCallback? onSuffixIconPressed;
@@ -37,13 +38,19 @@ class CustomInputField extends StatefulWidget {
     this.hoverColor = AppColors.inputFieldBackgroundColor,
     this.backgroundColor,
     this.iconColor = const Color(0xFFFF7900),
-    this.textColor,                 // added here
+    this.textColor, // added here
     this.borderColor = const Color(0xFFFF7900),
     this.borderRadius = 32.0,
     this.onSuffixIconPressed,
     this.onChanged,
-  })  : assert(svgIconPath == null || icon == null, 'Cannot provide both svgIconPath and icon'),
-        assert(suffixSvgIconPath == null || suffixIcon == null, 'Cannot provide both suffixSvgIconPath and suffixIcon');
+  }) : assert(
+         svgIconPath == null || icon == null,
+         'Cannot provide both svgIconPath and icon',
+       ),
+       assert(
+         suffixSvgIconPath == null || suffixIcon == null,
+         'Cannot provide both suffixSvgIconPath and suffixIcon',
+       );
 
   @override
   State<CustomInputField> createState() => _CustomInputFieldState();
@@ -69,21 +76,29 @@ class _CustomInputFieldState extends State<CustomInputField> {
           // maxLength: 1,
           textAlign: TextAlign.left,
           style: GoogleFonts.outfit(
-            fontSize: 18,
-            color: widget.textColor ?? AppColors.secondaryTextColor, // <-- use textColor or fallback
+            fontSize: 18.sp,
+            color:
+                widget.textColor ??
+                AppColors.secondaryTextColor, // <-- use textColor or fallback
             fontWeight: FontWeight.bold,
           ),
           decoration: InputDecoration(
             hintText: widget.hintText,
             hintStyle: GoogleFonts.outfit(
-              fontSize: 16,
+              fontSize: 16.sp,
               color: AppColors.secondaryTextColor.withOpacity(0.6),
               fontWeight: FontWeight.w400,
             ),
             filled: true,
-            fillColor: widget.backgroundColor ??
-                (_isHovered || _isFocused ? widget.hoverColor : Colors.transparent),
-            contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+            fillColor:
+                widget.backgroundColor ??
+                (_isHovered || _isFocused
+                    ? widget.hoverColor
+                    : Colors.transparent),
+            contentPadding: EdgeInsets.symmetric(
+              vertical: 8.h,
+              horizontal: 8.w,
+            ),
             counterText: '',
             border: _buildBorder(),
             enabledBorder: _buildBorder(isEnabled: true),
@@ -94,11 +109,6 @@ class _CustomInputFieldState extends State<CustomInputField> {
             suffixIcon: _buildSuffixIcon(),
           ),
         ),
-
-
-
-
-
       ),
     );
   }
@@ -112,35 +122,42 @@ class _CustomInputFieldState extends State<CustomInputField> {
         ? Colors.red
         : isFocused
         ? widget.borderColor
-        : widget.borderColor.withOpacity(_isHovered ? 0.8 : isEnabled ? 1.0 : 0.5);
+        : widget.borderColor.withOpacity(
+            _isHovered
+                ? 0.8
+                : isEnabled
+                ? 1.0
+                : 0.5,
+          );
 
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(widget.borderRadius),
-      borderSide: BorderSide(
-        color: color,
-        width: isFocused ? 2.0 : 1.5,
-      ),
+      borderRadius: BorderRadius.circular(widget.borderRadius.r),
+      borderSide: BorderSide(color: color, width: isFocused ? 2.0.w : 1.5.w),
     );
   }
 
   Widget? _buildPrefixIcon() {
     if (widget.svgIconPath != null) {
       return Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(12.sp),
         child: SvgPicture.asset(
           widget.svgIconPath!,
-          width: 24,
-          height: 24,
-          color: widget.iconColor.withOpacity(_isHovered || _isFocused ? 0.9 : 0.7),
+          width: 24.w,
+          height: 24.h,
+          color: widget.iconColor.withOpacity(
+            _isHovered || _isFocused ? 0.9 : 0.7,
+          ),
         ),
       );
     } else if (widget.icon != null) {
       return Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(12.sp),
         child: Icon(
           widget.icon,
-          size: 24,
-          color: widget.iconColor.withOpacity(_isHovered || _isFocused ? 0.9 : 0.7),
+          size: 24.sp,
+          color: widget.iconColor.withOpacity(
+            _isHovered || _isFocused ? 0.9 : 0.7,
+          ),
         ),
       );
     }
@@ -153,9 +170,11 @@ class _CustomInputFieldState extends State<CustomInputField> {
         onPressed: widget.onSuffixIconPressed,
         icon: SvgPicture.asset(
           widget.suffixSvgIconPath!,
-          width: 24,
-          height: 24,
-          color: widget.iconColor.withOpacity(_isHovered || _isFocused ? 0.9 : 0.7),
+          width: 24.w,
+          height: 24.h,
+          color: widget.iconColor.withOpacity(
+            _isHovered || _isFocused ? 0.9 : 0.7,
+          ),
         ),
       );
     } else if (widget.suffixIcon != null) {
@@ -167,6 +186,3 @@ class _CustomInputFieldState extends State<CustomInputField> {
     return null;
   }
 }
-
-
-
