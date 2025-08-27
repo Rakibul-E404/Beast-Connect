@@ -34,7 +34,10 @@ class OnboardScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: Get.height * 0.5),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24.0,
+                      vertical: 16,
+                    ),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -54,7 +57,10 @@ class OnboardScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 30,
+                        horizontal: 20,
+                      ),
                       child: Column(
                         children: [
                           SizedBox(
@@ -133,10 +139,3 @@ class OnboardScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
