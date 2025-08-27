@@ -4,8 +4,8 @@ import 'package:beast_connect/utils/app_colors.dart';
 import 'package:beast_connect/utils/asset_path.dart';
 import '../../../../widget/font/customAppFontStyle.dart';
 import '../../../../widget/inputField/customInputField.dart';
+import '../../controller/resetPassword_screen_controller.dart';
 import '../../widget/buttons/Custom_Elevated_Button.dart';
-import '../../views/controller/resetPassword_screen_controller.dart';
 
 class ResetPasswordScreenUi extends StatelessWidget {
   final ResetPasswordScreenController controller = Get.put(ResetPasswordScreenController());

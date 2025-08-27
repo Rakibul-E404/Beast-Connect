@@ -3,10 +3,10 @@ import 'package:beast_connect/views/screens/homeScreen/home_screen_widget/tag_fi
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../controller/home_screen_controller.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/asset_path.dart';
 import '../../../widget/font/customAppFontStyle.dart';
-import '../../controller/home_screen_controller.dart';
 import 'home_screen_widget/tag_files/all_tag_screen.dart';
 
 class HomeScreenUi extends StatefulWidget {
@@ -187,6 +187,7 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                             child: TextField(
                               onTap: (){
                                 Get.to(CreatePostScreen());
+                                FocusScope.of(context).requestFocus(FocusNode());
                                 },
                               style: TextStyle(color: Colors.white),
                               decoration: InputDecoration(
@@ -205,6 +206,8 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                               ),
                             ),
                           ),
+
+
                         ),
                       ),
                       const SizedBox(width: 12),

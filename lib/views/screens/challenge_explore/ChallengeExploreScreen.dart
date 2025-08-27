@@ -74,8 +74,7 @@ import 'package:beast_connect/utils/app_colors.dart';
 import 'package:beast_connect/widget/buttons/Custom_Elevated_Button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import '../../controller/challenge_screen_controller.dart';
+import '../../../controller/challenge_screen_controller.dart';
 
 class ChallengeExploreScreen extends StatelessWidget {
   final ChallengeVideo challenge;

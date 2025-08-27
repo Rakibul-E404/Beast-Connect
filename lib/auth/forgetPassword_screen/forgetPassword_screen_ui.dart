@@ -5,7 +5,7 @@ import 'package:beast_connect/utils/app_colors.dart';
 import 'package:beast_connect/utils/asset_path.dart';
 import '../../../../widget/font/customAppFontStyle.dart';
 import '../../../../widget/inputField/customInputField.dart';
-import '../../views/controller/forgetPassword_screen_controller.dart';
+import '../../controller/forgetPassword_screen_controller.dart';
 import '../../widget/buttons/Custom_Elevated_Button.dart';
 
 class ForgetPasswordScreenUi

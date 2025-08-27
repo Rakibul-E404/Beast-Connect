@@ -297,9 +297,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../controller/challenge_screen_controller.dart';
 import '../../../utils/app_colors.dart';
 import '../../../widget/buttons/Custom_Elevated_Button.dart';
-import '../../controller/challenge_screen_controller.dart';
 import '../challenge_explore/ChallengeExploreScreen.dart';
 
 class ChallengeScreenUi extends StatelessWidget {

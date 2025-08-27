@@ -1,9 +1,9 @@
 import 'package:beast_connect/widget/font/customAppFontStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../controller/profileSetUp/ProfileSetUpAudio_controller.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../widget/buttons/Custom_Elevated_Button.dart';
-import '../../../controller/profileSetUp/ProfileSetUpAudio_controller.dart';
 
 class ProfileSetUpAudioUi extends StatelessWidget {
   ProfileSetUpAudioUi({super.key});

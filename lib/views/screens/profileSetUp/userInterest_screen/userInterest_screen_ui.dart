@@ -195,12 +195,12 @@
 import 'package:beast_connect/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../controller/profileSetUp/UserInterestsScreen_controller.dart';
 import '../../../../widget/buttons/custom_text_button.dart';
 import '../../../../widget/font/customAppFontStyle.dart';
-import '../../../controller/profileSetUp/UserInterestsScreen_controller.dart';
 
 class UserInterestsScreenUi extends StatelessWidget {
-  UserInterestsScreenUi({Key? key}) : super(key: key);
+  UserInterestsScreenUi({super.key});
 
   final UserInterestsController controller = Get.put(UserInterestsController());
 

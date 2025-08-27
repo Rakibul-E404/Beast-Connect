@@ -46,6 +46,7 @@ dependencies:
   photo_manager: ^3.7.1
   video_player: ^2.10.0
   font_awesome_flutter: ^10.9.1
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:
