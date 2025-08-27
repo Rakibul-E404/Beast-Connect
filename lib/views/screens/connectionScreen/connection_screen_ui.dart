@@ -252,7 +252,6 @@
 
 
 import 'dart:ui';
-
 import 'package:beast_connect/views/screens/match_connection_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

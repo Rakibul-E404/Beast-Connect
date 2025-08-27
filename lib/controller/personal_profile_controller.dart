@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ProfileController {
+class PersonalProfileController {
   final BuildContext context;
   // Store the image path
   final String imagePath;
 
   // Constructor to accept context and image path
-  ProfileController(this.context, {required this.imagePath});
+  PersonalProfileController(this.context, {required this.imagePath});
 
   // Navigation method
   void navigateToScreen(Widget screen) {

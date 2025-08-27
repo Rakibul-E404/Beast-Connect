@@ -243,38 +243,35 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 60),
-            child: SingleChildScrollView(
-              child: Obx(() {
-                // Show AllTagSection for 'All' tag
-                if (controller.selectedTag.value == 'All') {
-                  return AllTagSection(
-                    screenWidth: screenWidth,
-                    controller: controller,
-                  );
-                }
-                // Show FitnessTagSection for 'Fitness' tag
-                else if (controller.selectedTag.value == 'Fitness') {
-                  final filteredContent = controller.getFilteredContent();
-                  return FitnessTagSection(
-                    screenWidth: screenWidth,
-                    controller: controller,
-                    content: filteredContent,
-                  );
-                }
-                // Add more conditions for other tags if needed
-                else {
-                  // You can handle other tags here if needed, or return an empty container
-                  return Center(
-                    child: Text(
-                      'No content available for selected tag',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  );
-                }
-              }),
-            ),
+          SingleChildScrollView(
+            child: Obx(() {
+              // Show AllTagSection for 'All' tag
+              if (controller.selectedTag.value == 'All') {
+                return AllTagSection(
+                  screenWidth: screenWidth,
+                  controller: controller,
+                );
+              }
+              // Show FitnessTagSection for 'Fitness' tag
+              else if (controller.selectedTag.value == 'Fitness') {
+                final filteredContent = controller.getFilteredContent();
+                return FitnessTagSection(
+                  screenWidth: screenWidth,
+                  controller: controller,
+                  content: filteredContent,
+                );
+              }
+              // Add more conditions for other tags if needed
+              else {
+                // You can handle other tags here if needed, or return an empty container
+                return Center(
+                  child: Text(
+                    'No content available for selected tag',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                );
+              }
+            }),
           ),
 
 

@@ -1,15 +1,25 @@
-import 'package:flutter/cupertino.dart';
+import 'package:beast_connect/utils/app_colors.dart';
+import 'package:beast_connect/controller/personal_profile_controller.dart';
+import 'package:beast_connect/views/screens/Profile/settings/settings_screen/presentation/settings_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = PersonalProfileController(
+      context,
+      imagePath: 'assets/image/userImage.png', // Pass the image path here
+    ); // Initialize the controller with the image path
+
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
-        backgroundColor: Colors.black87,
+        backgroundColor: AppColors.tertiaryColor,
         automaticallyImplyLeading: false,
         title: Text(
           'Profile',
@@ -25,7 +35,6 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Profile header
             Container(
               padding: EdgeInsets.only(
                 top: 50,
@@ -36,17 +45,30 @@ class ProfileScreen extends StatelessWidget {
               child: Center(
                 child: Column(
                   children: [
-                    // Profile image (using basic Image.asset)
-                    ClipOval(
-                      child: Image.asset(
-                        'assets/image/userImage.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
+                    // Profile image with square frame and rounded corners
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        // Rounded corners
+                        border: Border.all(
+                          color: Colors.orange, // Border color
+                          width: 0.5, // Border width
+                        ),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        // Ensure the image also has rounded corners
+                        child: Image.asset(
+                          controller.imagePath,
+                          // Use the image path from the controller
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     SizedBox(height: 16),
-                    // User name with loading state (simulating with a delay)
+                    // User name
                     Text(
                       'Afsana Hamid', // Updated name
                       style: TextStyle(
@@ -56,43 +78,105 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16),
-                    // Subscription info
+                    ///
+                    /// --------- subscription level--------------
+                    ///
                     Container(
+                      width: double.infinity,
                       padding: EdgeInsets.symmetric(
-                        vertical: 10,
+                        vertical: 14,
                         horizontal: 20,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.circular(30),
+                        color: AppColors.quaternaryColor,
+                        // Dark gray background
+                        border: Border.all(color: AppColors.primaryColor, width: 2),
+                        borderRadius: BorderRadius.circular(50),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.star, color: Colors.white),
-                          SizedBox(width: 8),
-                          Text(
-                            'BeastPlus', // Subscription label
-                            style: TextStyle(
-                              fontSize: 16,
+                          /// Crown icon
+                          Container(
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.crown,
+                              // Using campaign icon as crown alternative
                               color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                              size: 18,
                             ),
                           ),
-                          SizedBox(width: 8),
-                          Text(
-                            'Months',
-                            style: TextStyle(fontSize: 14, color: Colors.white),
+                          SizedBox(width: 12),
+                          ///-------------- BeastPlus text
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'BeastPlus',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 8),
+                              ///------------- Months text
+                              Row(
+                                children: [
+                                  Text(
+                                    'Months',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                          SizedBox(width: 8),
-                          Text(
-                            '1000',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          Spacer(),
+                          /// ----------container with coin icon
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 12,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryColor,
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.coins, // Coin icon
+                                  color: Colors.white,
+                                  size: 16,
+                                ),
+                                SizedBox(width: 6),
+                                Text(
+                                  '1000',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 40),
                   ],
                 ),
               ),
@@ -107,89 +191,56 @@ class ProfileScreen extends StatelessWidget {
                     label: "Personal Information",
                     icon: Icons.person,
                     onTap: () {
-                      // Navigate to Personal Information screen
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => PersonalInformationScreen(),
-                        ),
-                      );
+                      controller.navigateToScreen(PersonalInformationScreen());
                     },
                   ),
                   _buildMenuButton(
                     label: "Video Schedule",
                     icon: Icons.video_library,
                     onTap: () {
-                      // Navigate to Video Schedule screen
+                      // Implement navigation for Video Schedule
                     },
                   ),
                   _buildMenuButton(
                     label: "My Connection List",
-                    icon: Icons.group,
+                    icon: MdiIcons.heart,
                     onTap: () {
-                      // Navigate to My Connection List screen
+                      // Implement navigation for My Connection List
                     },
                   ),
                   _buildMenuButton(
                     label: "My Challenges List",
                     icon: Icons.check_circle,
                     onTap: () {
-                      // Navigate to My Challenges List screen
+                      // Implement navigation for My Challenges List
                     },
                   ),
                   _buildMenuButton(
                     label: "My Events List",
                     icon: Icons.event,
                     onTap: () {
-                      // Navigate to My Events List screen
+                      // Implement navigation for My Events List
                     },
                   ),
                   _buildMenuButton(
                     label: "My Subscription",
                     icon: Icons.card_membership,
                     onTap: () {
-                      // Navigate to My Subscription screen
+                      // Implement navigation for My Subscription
                     },
                   ),
                   _buildMenuButton(
                     label: "Settings",
                     icon: Icons.settings,
                     onTap: () {
-                      // Navigate to Settings screen
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => SettingsScreen()),
-                      );
+                      Get.to(() => SettingsScreen());
                     },
                   ),
                   _buildMenuButton(
                     label: "Logout",
                     icon: Icons.exit_to_app,
                     onTap: () {
-                      // Implement logout functionality
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text("Are you sure you want to log out?"),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text("Cancel"),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  // Perform logout logic here
-                                  Navigator.pop(context);
-                                },
-                                child: Text("Log out"),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      controller.showLogoutDialog();
                     },
                   ),
                 ],
@@ -243,6 +294,8 @@ class ProfileScreen extends StatelessWidget {
 
 // Placeholder screens for navigation
 class PersonalInformationScreen extends StatelessWidget {
+  const PersonalInformationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -252,251 +305,12 @@ class PersonalInformationScreen extends StatelessWidget {
   }
 }
 
-class SettingsScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Settings")),
-      body: Center(child: Text("Settings Screen")),
-    );
-  }
-}
-
-// import 'package:beast_connect/views/screens/Profile/self_profile_controller.dart';
-// import 'package:beast_connect/views/screens/Profile/settings/settings_screen/presentation/settings_screen.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-
-// class ProfileScreen extends StatelessWidget {
-//   const ProfileScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final controller = ProfileController(
-//       context,
-//       imagePath: 'assets/image/userImage.png', // Pass the image path here
-//     ); // Initialize the controller with the image path
-
-//     return Scaffold(
-//       backgroundColor: Colors.black87,
-//       appBar: AppBar(
-//         backgroundColor: Colors.black87,
-//         automaticallyImplyLeading: false,
-//         title: Text(
-//           'Profile',
-//           style: TextStyle(
-//             fontSize: 26,
-//             fontWeight: FontWeight.bold,
-//             color: Colors.white,
-//           ),
-//         ),
-//         centerTitle: true,
-//       ),
-//       body: SingleChildScrollView(
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             // Profile header
-//             Container(
-//               padding: EdgeInsets.only(
-//                 top: 50,
-//                 left: 20,
-//                 right: 20,
-//                 bottom: 20,
-//               ),
-//               child: Center(
-//                 child: Column(
-//                   children: [
-//                     // Profile image (using the image path from the controller)
-//                     ClipOval(
-//                       child: Image.asset(
-//                         controller
-//                             .imagePath, // Use the image path from the controller
-//                         height: 100,
-//                         width: 100,
-//                         fit: BoxFit.cover,
-//                       ),
-//                     ),
-//                     SizedBox(height: 16),
-//                     // User name with loading state (simulating with a delay)
-//                     Text(
-//                       'Afsana Hamid', // Updated name
-//                       style: TextStyle(
-//                         fontSize: 20,
-//                         fontWeight: FontWeight.w600,
-//                         color: Colors.white,
-//                       ),
-//                     ),
-//                     SizedBox(height: 16),
-//                     // Subscription info
-//                     Container(
-//                       padding: EdgeInsets.symmetric(
-//                         vertical: 10,
-//                         horizontal: 20,
-//                       ),
-//                       decoration: BoxDecoration(
-//                         color: Colors.orange,
-//                         borderRadius: BorderRadius.circular(30),
-//                       ),
-//                       child: Row(
-//                         mainAxisSize: MainAxisSize.min,
-//                         children: [
-//                           Icon(Icons.star, color: Colors.white),
-//                           SizedBox(width: 8),
-//                           Text(
-//                             'BeastPlus', // Subscription label
-//                             style: TextStyle(
-//                               fontSize: 16,
-//                               color: Colors.white,
-//                               fontWeight: FontWeight.bold,
-//                             ),
-//                           ),
-//                           SizedBox(width: 8),
-//                           Text(
-//                             'Months',
-//                             style: TextStyle(fontSize: 14, color: Colors.white),
-//                           ),
-//                           SizedBox(width: 8),
-//                           Text(
-//                             '1000',
-//                             style: TextStyle(fontSize: 16, color: Colors.white),
-//                           ),
-//                         ],
-//                       ),
-//                     ),
-//                     SizedBox(height: 40),
-//                   ],
-//                 ),
-//               ),
-//             ),
-
-//             // Menu buttons
-//             Padding(
-//               padding: const EdgeInsets.all(15.0),
-//               child: Column(
-//                 children: [
-//                   _buildMenuButton(
-//                     label: "Personal Information",
-//                     icon: Icons.person,
-//                     onTap: () {
-//                       controller.navigateToScreen(PersonalInformationScreen());
-//                     },
-//                   ),
-//                   _buildMenuButton(
-//                     label: "Video Schedule",
-//                     icon: Icons.video_library,
-//                     onTap: () {
-//                       // Implement navigation for Video Schedule
-//                     },
-//                   ),
-//                   _buildMenuButton(
-//                     label: "My Connection List",
-//                     icon: Icons.group,
-//                     onTap: () {
-//                       // Implement navigation for My Connection List
-//                     },
-//                   ),
-//                   _buildMenuButton(
-//                     label: "My Challenges List",
-//                     icon: Icons.check_circle,
-//                     onTap: () {
-//                       // Implement navigation for My Challenges List
-//                     },
-//                   ),
-//                   _buildMenuButton(
-//                     label: "My Events List",
-//                     icon: Icons.event,
-//                     onTap: () {
-//                       // Implement navigation for My Events List
-//                     },
-//                   ),
-//                   _buildMenuButton(
-//                     label: "My Subscription",
-//                     icon: Icons.card_membership,
-//                     onTap: () {
-//                       // Implement navigation for My Subscription
-//                     },
-//                   ),
-//                   _buildMenuButton(
-//                     label: "Settings",
-//                     icon: Icons.settings,
-//                     onTap: () {
-//                       Get.to(() => SettingsScreen());
-//                     },
-//                   ),
-//                   _buildMenuButton(
-//                     label: "Logout",
-//                     icon: Icons.exit_to_app,
-//                     onTap: () {
-//                       controller.showLogoutDialog();
-//                     },
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-
-//   Widget _buildMenuButton({
-//     required String label,
-//     required IconData icon,
-//     required VoidCallback onTap,
-//   }) {
-//     return Padding(
-//       padding: const EdgeInsets.only(bottom: 8),
-//       child: OutlinedButton(
-//         style: OutlinedButton.styleFrom(
-//           side: BorderSide(color: Colors.white),
-//           shape: RoundedRectangleBorder(
-//             borderRadius: BorderRadius.circular(20),
-//           ),
-//           padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-//         ),
-//         onPressed: onTap,
-//         child: Padding(
-//           padding: const EdgeInsets.only(left: 12),
-//           child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             children: [
-//               Row(
-//                 children: [
-//                   Icon(icon, size: 24, color: Colors.white),
-//                   SizedBox(width: 8),
-//                   Text(
-//                     label,
-//                     style: TextStyle(fontSize: 15, color: Colors.white),
-//                   ),
-//                 ],
-//               ),
-//               Icon(Icons.arrow_forward_ios, color: Colors.white),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// // Placeholder screens for navigation
-// class PersonalInformationScreen extends StatelessWidget {
+// class SettingsScreen extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       appBar: AppBar(title: Text("Personal Information")),
-//       body: Center(child: Text("Personal Information Screen")),
+//       appBar: AppBar(title: Text("Settings")),
+//       body: Center(child: Text("Settings Screen")),
 //     );
 //   }
 // }
-
-// // class SettingsScreen extends StatelessWidget {
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Scaffold(
-// //       appBar: AppBar(title: Text("Settings")),
-// //       body: Center(child: Text("Settings Screen")),
-// //     );
-// //   }
-// // }

@@ -9,7 +9,8 @@ class MatchConnectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Liked Profile'),
+centerTitle: true,
+        title: Text('Match Connection',style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.black,
       ),
       body: Padding(
