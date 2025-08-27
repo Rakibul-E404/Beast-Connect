@@ -1,10 +1,13 @@
 import 'package:beast_connect/utils/app_colors.dart';
 import 'package:beast_connect/utils/app_list.dart';
 import 'package:beast_connect/utils/ui_helper.dart';
+import 'package:beast_connect/views/screens/Profile/settings/change_password/presentation/change_password_screen.dart';
 import 'package:beast_connect/widget/buttons/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
+import '../../privacy_policy/presentation/privacy_policy_screen.dart';
 import '../widgets/settings_option.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -35,7 +38,19 @@ class SettingsScreen extends StatelessWidget {
                   itemBuilder: (cosntext, index) {
                     var data = AppList.settingsOptionsList[index];
                     return CustomMenuButton(
-                      onTap: () {},
+                      onTap: () {
+                        index == 0
+                            ? Get.to(() => ChangePasswordScreen())
+                            : index == 1
+                            ? Get.to(() => PrivacyPolicyScreen())
+                            : index == 2
+                            ? Get.to(() => ChangePasswordScreen())
+                            : index == 3
+                            ? Get.to(() => ChangePasswordScreen())
+                            : index == 4
+                            ? Get.to(() => ChangePasswordScreen())
+                            : null;
+                      },
                       icon: data.prefixIcon,
                       label: data.title,
                     );
