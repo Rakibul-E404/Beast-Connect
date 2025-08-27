@@ -6,7 +6,7 @@ import 'package:beast_connect/utils/asset_path.dart';
 import '../../../widget/font/customAppFontStyle.dart';
 import '../../../widget/inputField/customInputField.dart';
 import '../../../widget/buttons/Custom_Outline_Button.dart';
-import '../views/controller/signIn_screen_controller.dart';
+import '../controller/signIn_screen_controller.dart';
 import '../widget/buttons/Custom_Elevated_Button.dart';
 
 class SignInScreenUi extends StatelessWidget {

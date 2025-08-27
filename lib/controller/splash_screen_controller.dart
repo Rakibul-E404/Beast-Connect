@@ -1,6 +1,6 @@
 import 'package:beast_connect/views/bottom_nav.dart';
 import 'package:get/get.dart';
-import '../screens/onboard/onboard_screen.dart';
+import '../Views/screens/onboard/onboard_screen.dart';
 
 class SplashScreenController extends GetxController {
   @override

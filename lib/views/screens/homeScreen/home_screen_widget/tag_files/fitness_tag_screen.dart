@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
-import '../../../../controller/home_screen_controller.dart';
+import '../../../../../controller/home_screen_controller.dart';
 import '../../../public_user_leaderboard/public_user_leaderboard.dart';
 
 class FitnessTagSection extends StatefulWidget {

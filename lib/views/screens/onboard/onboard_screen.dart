@@ -1,9 +1,9 @@
 import 'package:beast_connect/utils/asset_path.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../controller/onboard_screen_controller.dart';
 import '../../../utils/app_colors.dart';
 import '../../../widget/font/customAppFontStyle.dart';
-import '../../controller/onboard_screen_controller.dart';
 
 class OnboardScreen extends StatelessWidget {
   OnboardScreen({super.key});

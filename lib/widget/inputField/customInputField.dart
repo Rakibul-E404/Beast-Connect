@@ -63,7 +63,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
         child: TextFormField(
           obscureText: widget.obscureText,
           controller: widget.controller,
-          keyboardType: widget.keyboardType ?? TextInputType.number,
+          keyboardType: widget.keyboardType ?? TextInputType.text,
           validator: widget.validator,
           onChanged: widget.onChanged,
           // maxLength: 1,

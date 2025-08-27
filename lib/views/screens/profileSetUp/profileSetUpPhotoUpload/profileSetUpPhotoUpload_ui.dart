@@ -207,12 +207,10 @@
 import 'package:beast_connect/views/screens/profileSetUp/profileSetUpAudio/profileSetUpAudio_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import '../../../../controller/profileSetUp/ProfileSetUpPhotoUpload_controller.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../widget/buttons/custom_text_button.dart';
 import '../../../../widget/font/customAppFontStyle.dart';
-
-import '../../../controller/profileSetUp/ProfileSetUpPhotoUpload_controller.dart';
 
 class ProfileSetUpPhotoUploadScreenUi extends StatefulWidget {
   const ProfileSetUpPhotoUploadScreenUi({super.key});

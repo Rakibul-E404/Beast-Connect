@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../controller/bio_data_screen_controller.dart';
+import '../../../controller/bio_data_screen_controller.dart';
 
 
 class InterestsSection extends StatelessWidget {

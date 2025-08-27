@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:audioplayers/audioplayers.dart';
-import '../../screens/profileSetUp/ProfileSetUpVideo/ProfileSetUpVideo_ui.dart';
+import '../../views/screens/profileSetUp/ProfileSetUpVideo/ProfileSetUpVideo_ui.dart';
 
 class Song {
   final String title;
