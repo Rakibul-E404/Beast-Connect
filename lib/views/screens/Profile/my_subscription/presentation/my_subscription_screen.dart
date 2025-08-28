@@ -5,8 +5,10 @@ import 'package:beast_connect/utils/ui_helper.dart';
 import 'package:beast_connect/widget/buttons/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../../../widget/custom_eleveted_button.dart';
+import '../../all_subscription_packages/presentation/all_subscriptions_packages_screen.dart';
 import '../widgets/custom_subscription_card.dart';
 
 class MySubscriptionScreen extends StatelessWidget {
@@ -35,7 +37,9 @@ class MySubscriptionScreen extends StatelessWidget {
                       style: TextFontStyle.textStyle16WhiteInterw400,
                     ),
                     CustomElevetedButton(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => AllSubscriptionsPackagesScreen());
+                      },
                       isBorderColorUsed: true,
                       buttonTitle: "All Package",
                     ),
