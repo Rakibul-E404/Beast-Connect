@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../views/screens/Profile/model/profile_options_model.dart';
 import '../views/screens/Profile/settings/settings_screen/model/settings_option_model.dart'
     show SettingsOptionModel;
 
@@ -24,5 +25,31 @@ class AppList {
     SettingsOptionModel(title: "Terms & conditions", prefixIcon: Icons.warning),
     SettingsOptionModel(title: "About us", prefixIcon: Icons.info),
     SettingsOptionModel(title: "Support", prefixIcon: FontAwesomeIcons.headset),
+  ];
+
+  static List<ProfileOptionsModel> profileOptionsList = [
+    ProfileOptionsModel(
+      prefixIcon: Icons.person,
+      title: "Personal Information",
+    ),
+    ProfileOptionsModel(
+      prefixIcon: Icons.video_library,
+      title: "Video Schedule",
+    ),
+    ProfileOptionsModel(
+      prefixIcon: Icons.favorite,
+      title: "My Connection List",
+    ),
+    ProfileOptionsModel(
+      prefixIcon: Icons.check_circle,
+      title: "My Challenges List",
+    ),
+    ProfileOptionsModel(prefixIcon: Icons.event, title: "My Events List"),
+    ProfileOptionsModel(
+      prefixIcon: Icons.card_membership,
+      title: "My Subscription",
+    ),
+    ProfileOptionsModel(prefixIcon: Icons.settings, title: "Settings"),
+    ProfileOptionsModel(prefixIcon: Icons.exit_to_app, title: "Logout"),
   ];
 }
