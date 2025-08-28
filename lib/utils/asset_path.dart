@@ -5,4 +5,5 @@ class AppAssetPath {
   static String logo = '$baseUrl/logo.png';
   static String onboardBackgroundImage = '$baseUrl/onboard.png';
   static String headSetImage = '$baseUrl/head_set.png';
+  static String crownIcon = '$baseUrl/crown_icon.png';
 }

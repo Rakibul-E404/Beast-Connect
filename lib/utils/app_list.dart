@@ -52,4 +52,10 @@ class AppList {
     ProfileOptionsModel(prefixIcon: Icons.settings, title: "Settings"),
     ProfileOptionsModel(prefixIcon: Icons.exit_to_app, title: "Logout"),
   ];
+
+  static List planDetailsList = [
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+  ];
 }

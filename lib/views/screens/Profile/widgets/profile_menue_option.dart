@@ -44,24 +44,3 @@ class ProfileMenueOption extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-// OutlinedButton(
-//       style: OutlinedButton.styleFrom(
-//         side: BorderSide(color: Colors.white),
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.circular(20),
-//         ),
-//         padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-//       ),
-//       onPressed: onTap,
-//       child: Padding(
-//         padding: const EdgeInsets.only(left: 12),
-//         child: ,
-//       ),
-//     )
