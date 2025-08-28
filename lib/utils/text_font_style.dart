@@ -5,6 +5,18 @@ class TextFontStyle {
   //Initialising Constractor
   TextFontStyle._();
 
+  static final textStyle24WhiteInterw600 = TextStyle(
+    fontFamilyFallback: const ['Inter', 'Satoshi'],
+    color: Colors.white,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w600,
+  );
+  static final textStyle24WhiteInterw500 = TextStyle(
+    fontFamilyFallback: const ['Inter', 'Satoshi'],
+    color: Colors.white,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+  );
   static final textStyle18WhiteInterw500 = TextStyle(
     fontFamilyFallback: const ['Inter', 'Satoshi'],
     color: Colors.white,
@@ -23,11 +35,23 @@ class TextFontStyle {
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
   );
+  static final textStyle16WhiteInterw400 = TextStyle(
+    fontFamilyFallback: const ['Inter', 'Satoshi'],
+    color: Colors.white,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+  );
   static final textStyle10WhiteInterw400 = TextStyle(
     fontFamilyFallback: const ['Inter', 'Satoshi'],
     color: Colors.white,
     fontSize: 10.sp,
     fontWeight: FontWeight.w400,
+  );
+  static final textStyle12WhiteInterw300 = TextStyle(
+    fontFamilyFallback: const ['Inter', 'Satoshi'],
+    color: Colors.white,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w300,
   );
   static final textStyle14WhiteInterw600 = TextStyle(
     fontFamilyFallback: const ['Inter', 'Satoshi'],

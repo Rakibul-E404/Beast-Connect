@@ -49,10 +49,22 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       bottomNavigationBar: CustomBottomNavBar(
         items: [
           BottomNavItem(label: 'Home', iconPath: 'assets/icon/home_icon.svg'),
-          BottomNavItem(label: 'Connection', iconPath: 'assets/icon/loveNew_icon.svg'),
-          BottomNavItem(label: 'Challenge', iconPath: 'assets/icon/frame_icon.svg'),
-          BottomNavItem(label: 'Communicate', iconPath: 'assets/icon/group_icon.svg'),
-          BottomNavItem(label: 'Profile', iconPath: 'assets/icon/profile_icon.svg'),
+          BottomNavItem(
+            label: 'Connection',
+            iconPath: 'assets/icon/loveNew_icon.svg',
+          ),
+          BottomNavItem(
+            label: 'Challenge',
+            iconPath: 'assets/icon/frame_icon.svg',
+          ),
+          BottomNavItem(
+            label: 'Communicate',
+            iconPath: 'assets/icon/group_icon.svg',
+          ),
+          BottomNavItem(
+            label: 'Profile',
+            iconPath: 'assets/icon/profile_icon.svg',
+          ),
         ],
         currentIndex: _currentIndex,
         onTap: (index) {

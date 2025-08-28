@@ -1,16 +1,27 @@
-import 'package:beast_connect/utils/text_font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../utils/app_colors.dart';
+import '../utils/text_font_style.dart';
+
 class CustomElevetedButton extends StatelessWidget {
-  final String buttonTitle;
-  final double? borderRadius;
   final void Function()? onTap;
+  final String buttonTitle;
+  final double? verticalPadding;
+  final double? horizontalPadding;
+  final bool isBorderColorUsed;
+  final double? borderRadius;
+  final TextStyle? textStyle;
+
   const CustomElevetedButton({
     super.key,
-    required this.buttonTitle,
-    this.borderRadius,
     this.onTap,
+    required this.buttonTitle,
+    this.verticalPadding,
+    this.horizontalPadding,
+    this.isBorderColorUsed = false,
+    this.borderRadius,
+    this.textStyle,
   });
 
   @override
@@ -19,20 +30,19 @@ class CustomElevetedButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        constraints: BoxConstraints(minHeight: 48.h),
-        padding: EdgeInsets.symmetric(vertical: 14.w),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFFF7900), Color(0xFF1FC4FF)],
-          ),
-          // color: controller.agreeToTerms.value ? null : Colors.grey,
-          borderRadius: BorderRadius.circular((borderRadius ?? 30).r),
+        padding: EdgeInsets.symmetric(
+          vertical: verticalPadding ?? 6.h,
+          horizontal: horizontalPadding ?? 14.w,
         ),
-
-        // add padding here for button height
+        decoration: BoxDecoration(
+          border: isBorderColorUsed
+              ? Border.all(color: AppColors.primaryColor)
+              : null,
+          borderRadius: BorderRadius.circular(borderRadius ?? 24.r),
+        ),
         child: Text(
           buttonTitle,
-          style: TextFontStyle.textStyle14WhiteInterw600,
+          style: TextFontStyle.textStyle10WhiteInterw400,
         ),
       ),
     );
