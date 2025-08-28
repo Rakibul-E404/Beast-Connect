@@ -7,7 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../about_us/presentation/about_us_screen.dart';
 import '../../privacy_policy/presentation/privacy_policy_screen.dart';
+import '../../support/presentation/support_screen.dart';
+import '../../terms_and_conditions/presentation/terms_and_conditions_screen.dart';
 import '../widgets/settings_option.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -44,11 +47,11 @@ class SettingsScreen extends StatelessWidget {
                             : index == 1
                             ? Get.to(() => PrivacyPolicyScreen())
                             : index == 2
-                            ? Get.to(() => ChangePasswordScreen())
+                            ? Get.to(() => TermsAndConditionsScreen())
                             : index == 3
-                            ? Get.to(() => ChangePasswordScreen())
+                            ? Get.to(() => AboutUsScreen())
                             : index == 4
-                            ? Get.to(() => ChangePasswordScreen())
+                            ? Get.to(() => SupportScreen())
                             : null;
                       },
                       icon: data.prefixIcon,

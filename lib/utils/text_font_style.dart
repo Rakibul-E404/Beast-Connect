@@ -17,4 +17,10 @@ class TextFontStyle {
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
   );
+  static final textStyle14WhiteInterw400 = TextStyle(
+    fontFamilyFallback: const ['Inter', 'Satoshi'],
+    color: Colors.white,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
 }

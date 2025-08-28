@@ -1,13 +1,14 @@
 import 'package:beast_connect/utils/app_colors.dart';
 import 'package:beast_connect/utils/app_list.dart';
-import 'package:beast_connect/utils/text_font_style.dart';
 import 'package:beast_connect/utils/ui_helper.dart';
 import 'package:beast_connect/widget/buttons/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PrivacyPolicyScreen extends StatelessWidget {
-  const PrivacyPolicyScreen({super.key});
+import '../../../../../../utils/text_font_style.dart';
+
+class TermsAndConditionsScreen extends StatelessWidget {
+  const TermsAndConditionsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +19,17 @@ class PrivacyPolicyScreen extends StatelessWidget {
           padding: EdgeInsets.all(UIHelper.kDefaulutPadding()),
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ///Appbar
-                CustomAppBar(title: "Privacy policy"),
+                ///AppBar
+                CustomAppBar(title: "Terms & conditions"),
                 UIHelper.verticalSpace(20.h),
 
-                ///Privacy Policy Last Updated Date
+                ///Terms & Conditions Body
                 RichText(
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "Privacy Policy\n",
+                        text: "Terms & conditions\n",
                         style: TextFontStyle.textStyle18WhiteInterw500,
                       ),
                       WidgetSpan(
@@ -39,7 +39,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: "Last Update Feb 2025",
+                        text: "last Update Feb 2025",
                         style: TextFontStyle.textStyle14WhiteInterw400,
                       ),
                     ],
@@ -47,13 +47,12 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 ),
                 UIHelper.verticalSpace(24.h),
 
-                ///Text : Privacy Policy Body
+                ///Text : Terms & Conditions Body
                 Text(
                   AppList.testText,
                   textAlign: TextAlign.start,
-                  style: TextFontStyle.textStyle14WhiteInterw600,
+                  style: TextFontStyle.textStyle14WhiteInterw400,
                 ),
-                UIHelper.verticalSpace(20.h),
               ],
             ),
           ),
