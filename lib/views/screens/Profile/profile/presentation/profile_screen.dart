@@ -3,9 +3,10 @@ import 'package:beast_connect/controller/personal_profile_controller.dart';
 import 'package:beast_connect/utils/app_list.dart';
 import 'package:beast_connect/utils/text_font_style.dart';
 import 'package:beast_connect/utils/ui_helper.dart';
+import 'package:beast_connect/views/screens/Profile/my_subscription/presentation/my_subscription_screen.dart';
 import 'package:beast_connect/views/screens/Profile/settings/settings_screen/presentation/settings_screen.dart';
-import 'package:beast_connect/views/screens/Profile/widgets/my_profile_active_subscription_type.dart';
-import 'package:beast_connect/views/screens/Profile/widgets/profile_menue_option.dart';
+import 'package:beast_connect/views/screens/Profile/profile/widgets/my_profile_active_subscription_type.dart';
+import 'package:beast_connect/views/screens/Profile/profile/widgets/profile_menue_option.dart';
 import 'package:beast_connect/widget/buttons/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -91,21 +92,21 @@ class ProfileScreen extends StatelessWidget {
                       prefixIcon: data.prefixIcon,
                       onTap: () {
                         index == 0
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => SettingsScreen())
                             : index == 1
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => SettingsScreen())
                             : index == 2
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => SettingsScreen())
                             : index == 3
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => SettingsScreen())
                             : index == 4
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => SettingsScreen())
                             : index == 5
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => MySubscriptionScreen())
                             : index == 6
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => SettingsScreen())
                             : index == 7
-                            ? Get.to(SettingsScreen())
+                            ? Get.to(() => SettingsScreen())
                             : null;
                       },
                     );

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../widget/custom_eleveted_button.dart';
+import '../../../../../../widget/custom_gradient_button.dart';
 import '../../../../../../widget/inputField/customInputField.dart';
 
 class ChangePasswordScreen extends StatelessWidget {
@@ -88,7 +88,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 UIHelper.verticalSpace(30.h),
 
                 ///Button : Reset Password
-                CustomElevetedButton(
+                CustomGradientButton(
                   onTap: () {},
                   buttonTitle: "Reset Password",
                 ),

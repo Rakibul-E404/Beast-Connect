@@ -1,4 +1,4 @@
-import 'package:beast_connect/views/screens/Profile/profile_screen.dart';
+import 'package:beast_connect/views/screens/Profile/profile/presentation/profile_screen.dart';
 import 'package:beast_connect/views/screens/challenge_screen/challenge_screen_ui.dart';
 import 'package:beast_connect/views/screens/communicateScreen/communicate_screen_ui.dart';
 import 'package:beast_connect/views/screens/connectionScreen/connection_screen_ui.dart';
@@ -49,10 +49,22 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       bottomNavigationBar: CustomBottomNavBar(
         items: [
           BottomNavItem(label: 'Home', iconPath: 'assets/icon/home_icon.svg'),
-          BottomNavItem(label: 'Connection', iconPath: 'assets/icon/loveNew_icon.svg'),
-          BottomNavItem(label: 'Challenge', iconPath: 'assets/icon/frame_icon.svg'),
-          BottomNavItem(label: 'Communicate', iconPath: 'assets/icon/group_icon.svg'),
-          BottomNavItem(label: 'Profile', iconPath: 'assets/icon/profile_icon.svg'),
+          BottomNavItem(
+            label: 'Connection',
+            iconPath: 'assets/icon/loveNew_icon.svg',
+          ),
+          BottomNavItem(
+            label: 'Challenge',
+            iconPath: 'assets/icon/frame_icon.svg',
+          ),
+          BottomNavItem(
+            label: 'Communicate',
+            iconPath: 'assets/icon/group_icon.svg',
+          ),
+          BottomNavItem(
+            label: 'Profile',
+            iconPath: 'assets/icon/profile_icon.svg',
+          ),
         ],
         currentIndex: _currentIndex,
         onTap: (index) {

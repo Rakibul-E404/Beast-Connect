@@ -12,8 +12,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent, // you can set custom background
-      elevation: 0, // removes shadow
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios,

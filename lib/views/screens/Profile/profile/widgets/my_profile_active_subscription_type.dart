@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../utils/app_colors.dart';
+import '../../../../../utils/app_colors.dart';
 
 class MyProfileActiveSubscriptionType extends StatelessWidget {
   final Icon planIcon;
@@ -26,7 +26,7 @@ class MyProfileActiveSubscriptionType extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 20.w),
       decoration: BoxDecoration(
         color: AppColors.backgroundColor,
-        // Dark gray background
+
         border: Border.all(color: AppColors.primaryColor, width: 2.sp),
         borderRadius: BorderRadius.circular(50),
       ),
@@ -35,12 +35,13 @@ class MyProfileActiveSubscriptionType extends StatelessWidget {
         children: [
           /// Section : Plan Icon
           Container(
+            alignment: Alignment.center,
             padding: EdgeInsets.all(8.r),
             decoration: BoxDecoration(
               color: AppColors.primaryColor,
               shape: BoxShape.circle,
             ),
-            // child: Icon(FontAwesomeIcons.crown, color: Colors.white, size: 18),
+
             child: planIcon,
           ),
           UIHelper.horizontalSpace(12.w),
@@ -52,7 +53,7 @@ class MyProfileActiveSubscriptionType extends StatelessWidget {
               Text(planTitle, style: TextFontStyle.textStyle18WhiteInterw700),
               SizedBox(height: 8),
 
-              ///------------- Months text
+              ///------------- Months text-----------------
               Text(
                 planDuration,
                 style: TextFontStyle.textStyle14WhiteInterw400,
@@ -75,11 +76,7 @@ class MyProfileActiveSubscriptionType extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ///Section : Coin's Icon
-                Icon(
-                  FontAwesomeIcons.coins, // Coin icon
-                  color: Colors.white,
-                  size: 16.sp,
-                ),
+                Icon(FontAwesomeIcons.coins, color: Colors.white, size: 16.sp),
                 UIHelper.horizontalSpace(6.w),
 
                 ///Section : Coins

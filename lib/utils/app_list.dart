@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../views/screens/Profile/model/profile_options_model.dart';
+import '../views/screens/Profile/profile/model/profile_options_model.dart';
 import '../views/screens/Profile/settings/settings_screen/model/settings_option_model.dart'
     show SettingsOptionModel;
 
@@ -51,5 +51,20 @@ class AppList {
     ),
     ProfileOptionsModel(prefixIcon: Icons.settings, title: "Settings"),
     ProfileOptionsModel(prefixIcon: Icons.exit_to_app, title: "Logout"),
+  ];
+
+  static List planDetailsList = [
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
   ];
 }
