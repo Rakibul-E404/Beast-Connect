@@ -4,6 +4,7 @@ import 'package:beast_connect/utils/app_list.dart';
 import 'package:beast_connect/utils/text_font_style.dart';
 import 'package:beast_connect/utils/ui_helper.dart';
 import 'package:beast_connect/views/screens/Profile/my_subscription/presentation/my_subscription_screen.dart';
+import 'package:beast_connect/views/screens/Profile/profile/widgets/show_logout_dialog.dart';
 import 'package:beast_connect/views/screens/Profile/settings/settings_screen/presentation/settings_screen.dart';
 import 'package:beast_connect/views/screens/Profile/profile/widgets/my_profile_active_subscription_type.dart';
 import 'package:beast_connect/views/screens/Profile/profile/widgets/profile_menue_option.dart';
@@ -106,7 +107,7 @@ class ProfileScreen extends StatelessWidget {
                             : index == 6
                             ? Get.to(() => SettingsScreen())
                             : index == 7
-                            ? Get.to(() => SettingsScreen())
+                            ? LogoutDialog.show(context)
                             : null;
                       },
                     );
