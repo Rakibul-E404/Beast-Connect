@@ -57,5 +57,14 @@ class AppList {
     "Early access to Join Unlimited Challenges.",
     "Early access to Join Unlimited Challenges.",
     "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
+    "Early access to Join Unlimited Challenges.",
   ];
 }

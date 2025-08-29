@@ -48,12 +48,20 @@ class MySubscriptionScreen extends StatelessWidget {
                 UIHelper.verticalSpace(32.h),
 
                 ///Section : Current Package
-                CustomSubscriptionCard(
-                  isCurrentPlan: true,
-                  isFreePlan: true,
-                  planDetailsList: AppList.planDetailsList,
-                  planPrice: 1.99,
-                  planTitle: "BeastBasic",
+                SizedBox(
+                  height: 0.6.sh,
+                  child: CustomSubscriptionCard(
+                    onTap: () {
+                      Get.to(() => AllSubscriptionsPackagesScreen());
+                    },
+                    coins: 3000,
+                    buttonTitle: "Upgrade",
+                    planTitle: "BeastBasic",
+                    isCurrentPlan: true,
+                    isFreePlan: true,
+                    planDetailsList: AppList.planDetailsList,
+                    planPrice: 1.99,
+                  ),
                 ),
               ],
             ),

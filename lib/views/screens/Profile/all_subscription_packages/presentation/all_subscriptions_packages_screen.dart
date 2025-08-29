@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:beast_connect/utils/app_colors.dart';
 import 'package:beast_connect/utils/ui_helper.dart';
+import 'package:beast_connect/widget/buttons/custom_app_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,12 +23,17 @@ class AllSubscriptionsPackagesScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                ///Section : Appbar
+                CustomAppBar(title: "All Packages"),
+                UIHelper.verticalSpace(24.h),
+
+                ///Section : Beast PlanAll Packages
                 CarouselSlider.builder(
                   itemCount: 15,
                   options: CarouselOptions(
-                    height: 350.h,
-                    aspectRatio: 16 / 16,
-                    viewportFraction: 0.9,
+                    height: 0.62.sh,
+                    // aspectRatio: 16 / 9,
+                    viewportFraction: 0.8,
                     initialPage: 0,
                     enableInfiniteScroll: true,
                     reverse: false,
@@ -46,11 +54,20 @@ class AllSubscriptionsPackagesScreen extends StatelessWidget {
                   itemBuilder:
                       (BuildContext context, int itemIndex, int pageViewIndex) {
                         return CustomSubscriptionCard(
-                          isCurrentPlan: true,
-                          isFreePlan: true,
+                          onTap: () {
+                            log(
+                              "Current All Packages Index : ___${itemIndex}______",
+                            );
+                          },
+                          isCurrentPlan: itemIndex == 0 ? true : false,
+                          isFreePlan: itemIndex == 0 ? true : false,
+                          buttonTitle: itemIndex == 0
+                              ? "Upgrade"
+                              : "Proceed Now",
+                          planTitle: "BeastBasic",
                           planDetailsList: AppList.planDetailsList,
                           planPrice: 1.99,
-                          planTitle: "BeastBasic",
+                          coins: itemIndex == 0 ? 300 : itemIndex * 300,
                         );
                       },
                 ),

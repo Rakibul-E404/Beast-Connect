@@ -88,7 +88,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 UIHelper.verticalSpace(30.h),
 
                 ///Button : Reset Password
-                CustomElevetedButton(
+                CustomGradientButton(
                   onTap: () {},
                   buttonTitle: "Reset Password",
                 ),

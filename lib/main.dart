@@ -1,3 +1,4 @@
+import 'package:beast_connect/views/screens/Profile/my_subscription/presentation/my_subscription_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter splash with GetX & DevicePreview',
         home: SplashScreen(),
+        // home: MySubscriptionScreen(),
 
         // home: BottomNavScreen(),
       ),
