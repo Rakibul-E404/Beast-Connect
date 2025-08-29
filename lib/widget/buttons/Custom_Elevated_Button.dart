@@ -186,71 +186,90 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Merge provided text style with defaults
-    final TextStyle mergedTextStyle = (textStyle ?? Theme.of(context).textTheme.labelLarge ?? const TextStyle()).copyWith(
-      fontSize: fontSize,
-      color: textColor ?? foregroundColor,
-      fontWeight: fontWeight,
-      letterSpacing: letterSpacing,
-      wordSpacing: wordSpacing,
-      textBaseline: textBaseline,
-      fontFamily: fontFamily,
-      fontFamilyFallback: fontFamilyFallback,
-      fontStyle: fontStyle,
-    );
+    final TextStyle mergedTextStyle =
+        (textStyle ??
+                Theme.of(context).textTheme.labelLarge ??
+                const TextStyle())
+            .copyWith(
+              fontSize: fontSize,
+              color: textColor ?? foregroundColor,
+              fontWeight: fontWeight,
+              letterSpacing: letterSpacing,
+              wordSpacing: wordSpacing,
+              textBaseline: textBaseline,
+              fontFamily: fontFamily,
+              fontFamilyFallback: fontFamilyFallback,
+              fontStyle: fontStyle,
+            );
 
     // Determine button shape with proper priority
-    final OutlinedBorder buttonShape = shape ?? RoundedRectangleBorder(
-      borderRadius: borderRadius ?? (isRounded
-          ? BorderRadius.circular(height != null ? height! / 2 : 24)
-          : BorderRadius.circular(8)),
-      side: borderSide ?? (isOutlined
-          ? BorderSide(
-        color: backgroundColor ?? Theme.of(context).primaryColor,
-        width: 1.5,
-      )
-          : BorderSide.none),
-    );
+    final OutlinedBorder buttonShape =
+        shape ??
+        RoundedRectangleBorder(
+          borderRadius:
+              borderRadius ??
+              (isRounded
+                  ? BorderRadius.circular(height != null ? height! / 2 : 24)
+                  : BorderRadius.circular(8)),
+          side:
+              borderSide ??
+              (isOutlined
+                  ? BorderSide(
+                      color: backgroundColor ?? Theme.of(context).primaryColor,
+                      width: 1.5,
+                    )
+                  : BorderSide.none),
+        );
 
     // Button style
-    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-      backgroundColor: backgroundColor ?? Theme.of(context).primaryColor,
-      foregroundColor: foregroundColor ?? Theme.of(context).colorScheme.onPrimary,
-      disabledBackgroundColor: disabledBackgroundColor ?? Theme.of(context).disabledColor,
-      disabledForegroundColor: disabledForegroundColor ?? Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.38),
-      shadowColor: shadowColor ?? Theme.of(context).shadowColor,
-      surfaceTintColor: surfaceTintColor,
-      elevation: elevation ?? (hasShadow ? 2 : 0),
-      minimumSize: Size(
-        isFullWidth ? double.infinity : width ?? 64,
-        height ?? 36,
-      ),
-      fixedSize: width != null || height != null
-          ? Size(width ?? double.infinity, height ?? 36)
-          : null,
-      maximumSize: maximumSize?.resolve({}) ?? Size.infinite,
-      padding: padding ?? const EdgeInsets.symmetric(horizontal: 16),
-      enableFeedback: enableFeedback ?? true,
-      alignment: Alignment.center,
-      splashFactory: InkRipple.splashFactory,
-      visualDensity: visualDensity ?? Theme.of(context).visualDensity,
-      tapTargetSize: materialTapTargetSize,
-      animationDuration: animationDuration ?? const Duration(milliseconds: 200),
-    ).copyWith(
-      shape: WidgetStateProperty.all(buttonShape), // Apply the shape here
-      overlayColor: overlayColorStateProperty ?? (overlayColor != null
-          ? WidgetStateProperty.all(overlayColor)
-          : null),
-      elevation: elevationProperty,
-      backgroundColor: backgroundColorProperty,
-      foregroundColor: foregroundColorProperty,
-      shadowColor: shadowColorProperty,
-      surfaceTintColor: surfaceTintColorProperty,
-      padding: paddingProperty,
-      side: sideProperty,
-      mouseCursor: mouseCursorProperty,
-      textStyle: textStyleProperty ?? WidgetStateProperty.all(mergedTextStyle),
-      iconColor: iconColorProperty,
-    );
+    final ButtonStyle buttonStyle =
+        ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor ?? Theme.of(context).primaryColor,
+          foregroundColor:
+              foregroundColor ?? Theme.of(context).colorScheme.onPrimary,
+          disabledBackgroundColor:
+              disabledBackgroundColor ?? Theme.of(context).disabledColor,
+          disabledForegroundColor:
+              disabledForegroundColor ??
+              Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.38),
+          shadowColor: shadowColor ?? Theme.of(context).shadowColor,
+          surfaceTintColor: surfaceTintColor,
+          elevation: elevation ?? (hasShadow ? 2 : 0),
+          minimumSize: Size(
+            isFullWidth ? double.infinity : width ?? 64,
+            height ?? 36,
+          ),
+          fixedSize: width != null || height != null
+              ? Size(width ?? double.infinity, height ?? 36)
+              : null,
+          maximumSize: maximumSize?.resolve({}) ?? Size.infinite,
+          padding: padding ?? const EdgeInsets.symmetric(horizontal: 16),
+          enableFeedback: enableFeedback ?? true,
+          alignment: Alignment.center,
+          splashFactory: InkRipple.splashFactory,
+          visualDensity: visualDensity ?? Theme.of(context).visualDensity,
+          tapTargetSize: materialTapTargetSize,
+          animationDuration:
+              animationDuration ?? const Duration(milliseconds: 200),
+        ).copyWith(
+          shape: WidgetStateProperty.all(buttonShape), // Apply the shape here
+          overlayColor:
+              overlayColorStateProperty ??
+              (overlayColor != null
+                  ? WidgetStateProperty.all(overlayColor)
+                  : null),
+          elevation: elevationProperty,
+          backgroundColor: backgroundColorProperty,
+          foregroundColor: foregroundColorProperty,
+          shadowColor: shadowColorProperty,
+          surfaceTintColor: surfaceTintColorProperty,
+          padding: paddingProperty,
+          side: sideProperty,
+          mouseCursor: mouseCursorProperty,
+          textStyle:
+              textStyleProperty ?? WidgetStateProperty.all(mergedTextStyle),
+          iconColor: iconColorProperty,
+        );
 
     // Button content
     Widget buttonContent = Text(
@@ -274,18 +293,24 @@ class CustomElevatedButton extends StatelessWidget {
       }
       return iconWidget != null
           ? IconTheme(
-        data: IconThemeData(
-          size: iconSize,
-          color: iconColor ?? foregroundColor ?? Theme.of(context).colorScheme.onPrimary,
-        ),
-        child: iconWidget,
-      )
+              data: IconThemeData(
+                size: iconSize,
+                color:
+                    iconColor ??
+                    foregroundColor ??
+                    Theme.of(context).colorScheme.onPrimary,
+              ),
+              child: iconWidget,
+            )
           : null;
     }
 
     // Add icon(s) if provided
     final Widget? prefixIcon = buildIconWidget(svgIconPath, icon);
-    final Widget? suffixIconWidget = buildIconWidget(suffixSvgIconPath, suffixIcon);
+    final Widget? suffixIconWidget = buildIconWidget(
+      suffixSvgIconPath,
+      suffixIcon,
+    );
 
     if (prefixIcon != null || suffixIconWidget != null) {
       final List<Widget> children = [];
@@ -326,7 +351,3 @@ class CustomElevatedButton extends StatelessWidget {
     );
   }
 }
-
-
-
-
