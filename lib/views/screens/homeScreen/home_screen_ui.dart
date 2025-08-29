@@ -1,6 +1,7 @@
 import 'package:beast_connect/views/screens/homeScreen/create_post_screen.dart';
 import 'package:beast_connect/views/screens/homeScreen/home_screen_widget/tag_files/fitness_tag_screen.dart';
-import 'package:beast_connect/views/screens/homeScreen/notification_screen.dart';
+import 'package:beast_connect/views/screens/homeScreen/message/message_screen.dart';
+import 'package:beast_connect/views/screens/homeScreen/notificaiton/notification_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -119,7 +120,9 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                               borderRadius: BorderRadius.circular(30)),
                           child: IconButton(
                             icon: const Icon(CupertinoIcons.chat_bubble),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(()=>MessageScreen());
+                            },
                             color: Colors.white,
                             iconSize: 28,
                           ),
