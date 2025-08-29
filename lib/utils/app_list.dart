@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../views/screens/Profile/model/profile_options_model.dart';
+import '../views/screens/Profile/profile/model/profile_options_model.dart';
 import '../views/screens/Profile/settings/settings_screen/model/settings_option_model.dart'
     show SettingsOptionModel;
 

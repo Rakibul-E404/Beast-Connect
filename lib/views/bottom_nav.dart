@@ -1,4 +1,4 @@
-import 'package:beast_connect/views/screens/Profile/profile_screen.dart';
+import 'package:beast_connect/views/screens/Profile/profile/presentation/profile_screen.dart';
 import 'package:beast_connect/views/screens/challenge_screen/challenge_screen_ui.dart';
 import 'package:beast_connect/views/screens/communicateScreen/communicate_screen_ui.dart';
 import 'package:beast_connect/views/screens/connectionScreen/connection_screen_ui.dart';
