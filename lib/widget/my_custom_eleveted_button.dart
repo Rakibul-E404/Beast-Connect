@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_colors.dart';
 import '../utils/text_font_style.dart';
 
-class CustomElevetedButton extends StatelessWidget {
+class MyCustomElevetedButton extends StatelessWidget {
   final void Function()? onTap;
   final String buttonTitle;
   final double? verticalPadding;
@@ -12,8 +12,10 @@ class CustomElevetedButton extends StatelessWidget {
   final bool isBorderColorUsed;
   final double? borderRadius;
   final TextStyle? textStyle;
+  final Color? buttonColor;
+  final bool isButtonColorUsed;
 
-  const CustomElevetedButton({
+  const MyCustomElevetedButton({
     super.key,
     this.onTap,
     required this.buttonTitle,
@@ -22,6 +24,8 @@ class CustomElevetedButton extends StatelessWidget {
     this.isBorderColorUsed = false,
     this.borderRadius,
     this.textStyle,
+    this.buttonColor,
+    this.isButtonColorUsed = false,
   });
 
   @override
@@ -35,6 +39,9 @@ class CustomElevetedButton extends StatelessWidget {
           horizontal: horizontalPadding ?? 14.w,
         ),
         decoration: BoxDecoration(
+          color: isButtonColorUsed
+              ? buttonColor ?? AppColors.primaryColor
+              : null,
           border: isBorderColorUsed
               ? Border.all(color: AppColors.primaryColor)
               : null,
@@ -42,7 +49,7 @@ class CustomElevetedButton extends StatelessWidget {
         ),
         child: Text(
           buttonTitle,
-          style: TextFontStyle.textStyle10WhiteInterw400,
+          style: textStyle ?? TextFontStyle.textStyle10WhiteInterw400,
         ),
       ),
     );

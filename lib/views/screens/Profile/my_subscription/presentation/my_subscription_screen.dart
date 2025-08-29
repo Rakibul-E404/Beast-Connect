@@ -36,7 +36,7 @@ class MySubscriptionScreen extends StatelessWidget {
                       "My Packages",
                       style: TextFontStyle.textStyle16WhiteInterw400,
                     ),
-                    CustomElevetedButton(
+                    MyCustomElevetedButton(
                       onTap: () {
                         Get.to(() => AllSubscriptionsPackagesScreen());
                       },
