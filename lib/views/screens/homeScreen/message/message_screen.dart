@@ -26,13 +26,13 @@ class _MessageScreenState extends State<MessageScreen> {
       isUnread: true,
     ),
     Message(
-      name: 'Jobless Community',
+      name: 'Jobless Community Jobless Community',
       lastMessage: 'Your okay fine.',
       time: '08:36 am',
       isUnread: false,
     ),
     Message(
-      name: 'Jobless Community',
+      name: 'IT Job',
       lastMessage: 'Your okay fine.',
       time: '08:36 am',
       isUnread: false,
