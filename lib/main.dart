@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         useInheritedMediaQuery: true,
         debugShowCheckedModeBanner: false,
         title: 'Flutter splash with GetX & DevicePreview',
-        // home: SplashScreen(),
-        home: ProfileScreen(),
+        home: SplashScreen(),
+        // home: ProfileScreen(),
         // home: MySubscriptionScreen(),
 
         // home: BottomNavScreen(),

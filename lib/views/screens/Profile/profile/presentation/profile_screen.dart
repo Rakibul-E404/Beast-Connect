@@ -14,6 +14,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '../../personal_information/personalInformationScreen.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -26,7 +28,13 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-
+                ///---------------------Appbar
+appBar: AppBar(
+  backgroundColor: AppColors.backgroundColor,
+  centerTitle: true,
+  automaticallyImplyLeading: false,
+  title: Text("Profile",style: TextStyle(color: AppColors.secondaryTextColor),),
+),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -34,8 +42,7 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ///Appbar
-                CustomAppBar(title: "Profile"),
+                
                 UIHelper.verticalSpace(22.h),
 
                 // Profile image with square frame and rounded corners
@@ -93,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
                       prefixIcon: data.prefixIcon,
                       onTap: () {
                         index == 0
-                            ? Get.to(() => SettingsScreen())
+                            ? Get.to(() => PersonalInformationScreen())
                             : index == 1
                             ? Get.to(() => SettingsScreen())
                             : index == 2

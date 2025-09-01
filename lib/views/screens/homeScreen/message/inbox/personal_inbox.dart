@@ -268,9 +268,11 @@ class _PersonalInboxState extends State<PersonalInbox> {
                       onPressed: _sendMessage,
                     ),
                   ),
+                  SizedBox(height: 10,),
                 ],
               ),
             ),
+
           ),
         ],
       ),
