@@ -51,12 +51,32 @@ class SignupScreenUi extends StatelessWidget {
                   const SizedBox(height: 24),
 
                   CustomInputField(
-                      icon: Icons.person,
-                      hintText: 'Enter first name', controller: controller.firstNameController),
+                      // icon: Icons.person,
+                      hintText: '   Enter first name', controller: controller.firstNameController),
                   const SizedBox(height: 16),
                   CustomInputField(
-                      icon: Icons.person,
-                      hintText: 'Enter last name', controller: controller.lastNameController),
+                      // icon: Icons.person,
+                      hintText: '   Enter last name', controller: controller.lastNameController),
+                  const SizedBox(height: 16),
+                  CustomInputField(
+                      // icon: Icons.edit_calendar_outlined,
+                      hintText: '   Enter date of birth', controller: controller.dobController),
+                  const SizedBox(height: 16),
+
+                  Text('Gender', style: CustomAppFontStyle.medium(14, AppColors.secondaryTextColor)),
+                  const SizedBox(height: 8),
+                  Obx(() => SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        _buildGenderRadio('Male', controller),
+                        const SizedBox(width: 16),
+                        _buildGenderRadio('Female', controller),
+                        const SizedBox(width: 16),
+                        _buildGenderRadio('Non-Binary', controller),
+                      ],
+                    ),
+                  )),
                   const SizedBox(height: 16),
                   CustomInputField(
                       hintText: 'Enter email', icon: Icons.email, controller: controller.emailController),
@@ -87,35 +107,9 @@ class SignupScreenUi extends StatelessWidget {
                     ),
                     onSuffixIconPressed: controller.toggleConfirmPasswordVisibility,
                   )),
-
-                  const SizedBox(height: 16),
-                  CustomInputField(
-                      icon: Icons.calendar_today,
-                      hintText: 'Enter age', controller: controller.ageController),
-                  const SizedBox(height: 16),
-                  CustomInputField(
-                      icon: Icons.location_on,
-                      hintText: 'Enter location', controller: controller.locationController),
-                  const SizedBox(height: 16),
-                  CustomInputField(
-                      icon: Icons.edit_calendar_outlined,
-                      hintText: 'Enter date of birth', controller: controller.dobController),
                   const SizedBox(height: 16),
 
-                  Text('Gender', style: CustomAppFontStyle.medium(14, AppColors.secondaryTextColor)),
-                  const SizedBox(height: 8),
-                  Obx(() => SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildGenderRadio('Male', controller),
-                        const SizedBox(width: 16),
-                        _buildGenderRadio('Female', controller),
-                        const SizedBox(width: 16),
-                        _buildGenderRadio('Non-Binary', controller),
-                      ],
-                    ),
-                  )),
+
 
                   const SizedBox(height: 16),
                   Obx(() => Row(

@@ -34,6 +34,14 @@ class ProfileSetUpVideoUi extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
+            Row(
+              children: [
+                Text("Choose your favorite video",style: TextStyle(
+                    color: AppColors.secondaryTextColor,
+                    fontSize: 20
+                ),),
+              ],
+            ),
             Expanded(
               child: GridView.builder(
                 itemCount: imagePaths.length,
@@ -84,7 +92,7 @@ class ProfileSetUpVideoUi extends StatelessWidget {
                     minHeight: 48,
                   ),
                   child: Text(
-                    'Upload',
+                    'Finish',
                     style: CustomAppFontStyle.bold(
                       16,
                       Colors.white,

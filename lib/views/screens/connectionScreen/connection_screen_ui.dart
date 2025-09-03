@@ -80,18 +80,28 @@ class _ConnectionScreenUiState extends State<ConnectionScreenUi> {
         ),
         centerTitle: true,
         actions: [
-          CircleAvatar(
-            backgroundColor: AppColors.filterIconCircleColor,
-            radius: 20,
-            child: IconButton(
-              onPressed: () {
-                _controller.showFilterBottomSheet(context);
-              },
-              icon: Icon(
-                Icons.filter_alt,
-                color: AppColors.primaryIconColor,
-                size: 23,
-              ),
+          IconButton(
+            onPressed: () {
+              _controller.showFilterBottomSheet(context);
+            },
+            padding: EdgeInsets.all(0),
+            icon: Icon(
+              
+              Icons.search,
+              color: AppColors.primaryIconColor,
+              size: 23,
+            ),
+          ),
+          SizedBox(width: 0,),
+          IconButton(
+            onPressed: () {
+              _controller.showFilterBottomSheet(context);
+            },
+            padding: EdgeInsets.all(0),
+            icon: Icon(
+              Icons.filter_alt,
+              color: AppColors.primaryIconColor,
+              size: 23,
             ),
           ),
         ],

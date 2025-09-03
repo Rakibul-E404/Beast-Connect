@@ -1,3 +1,4 @@
+import 'package:beast_connect/auth/signIn_screen_ui.dart';
 import 'package:beast_connect/views/screens/Profile/my_subscription/presentation/my_subscription_screen.dart';
 import 'package:beast_connect/views/screens/Profile/profile/presentation/profile_screen.dart';
 import 'package:device_preview/device_preview.dart';
@@ -28,8 +29,8 @@ class MyApp extends StatelessWidget {
         useInheritedMediaQuery: true,
         debugShowCheckedModeBanner: false,
         title: 'Flutter splash with GetX & DevicePreview',
-        home: SplashScreen(),
-        // home: ProfileScreen(),
+        // home: SplashScreen(),
+        home: SignInScreenUi(),
         // home: MySubscriptionScreen(),
 
         // home: BottomNavScreen(),

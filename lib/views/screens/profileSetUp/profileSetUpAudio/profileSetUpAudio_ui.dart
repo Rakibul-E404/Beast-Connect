@@ -23,10 +23,19 @@ class ProfileSetUpAudioUi extends StatelessWidget {
             style: CustomAppFontStyle.regular(20, AppColors.secondaryTextColor),
           ),
           backgroundColor: Colors.black87,
-          leading: const BackButton(color: Colors.white),
+          leading: IconButton(onPressed: (){Get.back();}, icon: Icon(Icons.arrow_back_ios,color: AppColors.primaryIconColor)),
+
         ),
         body: Column(
           children: [
+            Row(
+              children: [
+              Text("Choose your favorite song",style: TextStyle(
+                color: AppColors.secondaryTextColor,
+                fontSize: 20
+              ),),
+              ],
+            ),
             Expanded(
               child: Obx(() {
                 final selectedIndex = controller.selectedIndex.value;
@@ -51,7 +60,7 @@ class ProfileSetUpAudioUi extends StatelessWidget {
                 ),
                 child: CustomElevatedButton(
                   onPressed: controller.goToProfileSetUpVideoScreen,
-                  buttonText: 'Select Audio',
+                  buttonText: 'Next',
                   textColor: AppColors.secondaryTextColor,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,

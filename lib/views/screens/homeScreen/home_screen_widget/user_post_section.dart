@@ -108,15 +108,31 @@ class UserPostSection extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.thumb_up_outlined,
-                      color: AppColors.primaryColor,
-                      size: 25,
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.thumb_up_outlined,
+                          color: AppColors.primaryColor,
+                          size: 25,
+                        ),
+                        SizedBox(width: 8,),
+                        Text("5000",style: TextStyle(
+                          color: AppColors.secondaryTextColor
+                        ),),
+                      ],
                     ),
-                    Icon(
-                      CupertinoIcons.chat_bubble,
-                      color: AppColors.primaryColor,
-                      size: 25,
+                    Row(
+                      children: [
+                        Text("50",style: TextStyle(
+                            color: AppColors.secondaryTextColor
+                        ),),
+                        SizedBox(width: 8,),
+                        Icon(
+                          CupertinoIcons.chat_bubble,
+                          color: AppColors.primaryColor,
+                          size: 25,
+                        ),
+                      ],
                     ),
                   ],
                 ),

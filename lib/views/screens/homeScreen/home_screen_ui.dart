@@ -33,7 +33,9 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
         toolbarHeight: 200,
         flexibleSpace: Stack(
           children: [
-            /// Background Image
+            ///
+            ///-------------------------- Background Image
+            ///
             Transform.translate(
               offset: const Offset(0, 0),
               child: SizedBox(
@@ -44,7 +46,9 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                 ),
               ),
             ),
-            /// Top Content: Logo, Text, Icons
+            ///
+            ///----------------------- Top Content: Logo, Text, Icons
+            ///
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: Column(
@@ -251,14 +255,16 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
         children: [
           SingleChildScrollView(
             child: Obx(() {
-              // Show AllTagSection for 'All' tag
+              ///
+              ///------------------------ Show AllTagSection for 'All' tag
+              ///
               if (controller.selectedTag.value == 'All') {
                 return AllTagSection(
                   screenWidth: screenWidth,
                   controller: controller,
                 );
               }
-              // Show FitnessTagSection for 'Fitness' tag
+              /// Show FitnessTagSection for 'Fitness' tag
               else if (controller.selectedTag.value == 'Fitness') {
                 final filteredContent = controller.getFilteredContent();
                 return FitnessTagSection(
@@ -267,9 +273,9 @@ class _HomeScreenUiState extends State<HomeScreenUi> {
                   content: filteredContent,
                 );
               }
-              // Add more conditions for other tags if needed
+              /// Add more conditions for other tags if needed
               else {
-                // You can handle other tags here if needed, or return an empty container
+                /// You can handle other tags here if needed, or return an empty container
                 return Center(
                   child: Text(
                     'No content available for selected tag',

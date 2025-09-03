@@ -25,12 +25,6 @@ class AllTagSection extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 20), // Extra spacing if needed
-
-                ///
-                /// todo::::::::::::::::::::::::::::: [User Post Section] ::::::::::::::::::::::::::::::::::::::::
-                ///
-                UserPostSection(),
 
                 const SizedBox(height: 20),
                 ///
@@ -94,6 +88,14 @@ class AllTagSection extends StatelessWidget {
                   rankedUsers: controller.rankedUsers,
                   screenWidth: screenWidth,
                 ),
+
+                const SizedBox(height: 20),
+
+                ///
+                /// todo::::::::::::::::::::::::::::: [User Post Section] ::::::::::::::::::::::::::::::::::::::::
+                ///
+                UserPostSection(),
+
                 const SizedBox(height: 40),
               ],
             ),
