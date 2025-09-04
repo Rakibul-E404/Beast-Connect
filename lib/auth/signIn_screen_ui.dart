@@ -153,7 +153,7 @@ class SignInScreenUi extends StatelessWidget {
                             TextButton(
                               onPressed: () => controller.goToForgetPassword(),
                               child: const Text(
-                                'Forgot Password?',
+                                'Forgot Password',
                                 style: TextStyle(
                                   color: AppColors.secondaryTextColor,
                                   fontSize: 14,

@@ -1,4 +1,6 @@
 import 'package:beast_connect/utils/app_colors.dart';
+import 'package:beast_connect/views/screens/Profile/personal_information/audio_file_secected_screen.dart';
+import 'package:beast_connect/views/screens/Profile/personal_information/personal_informaiton_edit_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -114,10 +116,12 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(
-                                      CupertinoIcons.music_note,
+                                    IconButton(
+                                      onPressed: (){Get.to(AudioFileSelectedScreen());},
+                                      icon: Icon(CupertinoIcons.music_note,
+                                        size: 30,
+                                      ),
                                       color: AppColors.primaryIconColor,
-                                      size: 30,
                                     ),
                                   ],
                                 ),
@@ -699,9 +703,12 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              Icon(
-                                CupertinoIcons.square_pencil_fill,
-                                color: AppColors.primaryColor,
+                              GestureDetector(
+                                onTap: (){Get.to(PersonalInformaitonEditScreen());},
+                                child: Icon(
+                                  CupertinoIcons.square_pencil_fill,
+                                  color: AppColors.primaryColor,
+                                ),
                               ),
                             ],
                           ),

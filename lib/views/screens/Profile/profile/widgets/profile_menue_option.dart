@@ -17,13 +17,13 @@ class ProfileMenueOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      borderRadius: BorderRadius.circular(32.r), // Ensure the tap area is rounded
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 13.h),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white),
           borderRadius: BorderRadius.circular(32.r),
         ),
-
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

@@ -4,6 +4,7 @@ import 'package:beast_connect/utils/app_list.dart';
 import 'package:beast_connect/utils/text_font_style.dart';
 import 'package:beast_connect/utils/ui_helper.dart';
 import 'package:beast_connect/views/screens/Profile/my_subscription/presentation/my_subscription_screen.dart';
+import 'package:beast_connect/views/screens/Profile/my_video_schedule_list.dart';
 import 'package:beast_connect/views/screens/Profile/profile/widgets/show_logout_dialog.dart';
 import 'package:beast_connect/views/screens/Profile/settings/settings_screen/presentation/settings_screen.dart';
 import 'package:beast_connect/views/screens/Profile/profile/widgets/my_profile_active_subscription_type.dart';
@@ -102,7 +103,7 @@ appBar: AppBar(
                         index == 0
                             ? Get.to(() => PersonalInformationScreen())
                             : index == 1
-                            ? Get.to(() => SettingsScreen())
+                            ? Get.to(() => MyVideoScheduleList())
                             : index == 2
                             ? Get.to(() => SettingsScreen())
                             : index == 3
