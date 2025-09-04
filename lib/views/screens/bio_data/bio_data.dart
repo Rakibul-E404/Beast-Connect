@@ -22,32 +22,7 @@ class BioDataScreen extends StatefulWidget {
 }
 
 class _BioDataScreenState extends State<BioDataScreen> {
-  // late VideoPlayerController _videoController;
-  // bool _isVideoLoading = true;
-  // // final BioDataScreenController _controller = BioDataScreenController();
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _initializeVideoPlayer();
-  // }
-  //
-  // void _initializeVideoPlayer() {
-  //   _videoController = VideoPlayerController.networkUrl(
-  //     Uri.parse('https://www.w3schools.com/html/mov_bbb.mp4'),
-  //   )..initialize().then((_) {
-  //     setState(() {
-  //       _isVideoLoading = false;
-  //     });
-  //     _videoController.play();
-  //   });
-  // }
-  //
-  // @override
-  // void dispose() {
-  //   super.dispose();
-  //   _videoController.dispose();
-  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +38,7 @@ class _BioDataScreenState extends State<BioDataScreen> {
         ),
         backgroundColor: Colors.black,
         title: Text(
-          'Profile Details',
+          'User Profile Details',
           style: TextStyle(color: Colors.white, fontSize: 25),
         ),
         centerTitle: true,
